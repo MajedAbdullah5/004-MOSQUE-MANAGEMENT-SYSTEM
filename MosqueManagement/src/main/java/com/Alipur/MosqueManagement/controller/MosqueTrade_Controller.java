@@ -185,6 +185,7 @@ public class MosqueTrade_Controller {
 		return "I-collection-jummah";
 
 	}
+	//Suppose I added this dummy text here
 	// Special Fitr Collection
 	@GetMapping("/specialFitrCollection")
 	public String specialFitrCollecion(Model theModel) {
