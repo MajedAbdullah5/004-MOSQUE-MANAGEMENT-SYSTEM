@@ -1,0 +1,61 @@
+<div th:replace="header-footer/header :: myheader"></div>
+<head>
+<title>Admin panel</title>
+</head>
+<body>
+	<div class="list">
+		<div>
+			<h3>&nbsp;ADMIN PANEL</h3>
+		</div>
+		<hr>
+		<div>
+			&emsp;<a class="btn btn-info btn-lg" th:href="@{/mosque/add}">ADD
+				TRADE</a>
+		</div>
+		<br>
+		<div class="">
+			<ul class="headOfCollections">
+				<li><a th:href="@{/mosque/list}">LIST OF ALL</a></li>
+				</br>
+				<li><a c th:href="@{/mosque/orgDonation}">ORGANIZATION
+						DONATION</a></li>
+				</br>
+				<li><a th:href="@{/mosque/personDonation}">PERSON DONATION</a></li>
+				</br>
+				<li><a th:href="@{/mosque/landSale}">LAND SALE</a></li>
+				</br>
+				<li><a th:href="@{/mosque/unnecessaryEquipmentSale}">UNNECESSARY
+						EQUIPMENT SALE</a></li>
+				</br>
+				<li><a th:href="@{/mosque/bankWithdrawn}">BANK WITHDRAWN</a></li>
+				</br>
+				<li><a th:href="@{/mosque/collectionJummah}">RETAIL
+						COLLECTION OF JUMMAH</a></li>
+				</br>
+				<li><a th:href="@{/mosque/specialFitrCollection}">SPECIAL
+						COLLECTION OF FITR</a></li>
+				</br>
+				<li><a th:href="@{/mosque/specialAdhaCollection}">SPECIAL
+						COLLECTION OF ADHA</a></li>
+				</br>
+				<li><a th:href="@{/mosque/specialJummahCollection}">SPECIAL
+						COLLECTION OF JUMMAH</a></li>
+				</br>
+				<li><a th:href="@{/mosque/tarawihExtra}">TARAWIH EXTRA</a></li>
+				</br>
+				<li><a th:href="@{/mosque/bankWithdrawn}">BANK WITHDRAWN</a></li>
+				</br>
+				<li><a th:href="@{/mosque/social}">SOCIAL COLLECTION</a></li>
+				</br>
+				<li><a th:href="@{/mosque/other}">OTHERS COLLECTION</a></li>
+				<br>
+
+			</ul>
+		</div>
+		<br>
+	</div>
+</body>
+<footer>
+	<div th:replace="header-footer/footer :: myfooter"></div>
+</footer>
+</html>

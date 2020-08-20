@@ -1,0 +1,70 @@
+<div th:replace="header-footer/header :: myheader"></div>
+<body>
+	<div>
+		<div>
+			<div class="list">
+				<div>
+					<h3>&nbsp;&nbsp;COMBINED REPORT OF INCOME AND EXP.</h3>
+				</div>
+				<br>
+				<div style="overflow-x: auto;">
+					<table class="table table-bordered table-striped">
+						<thead class="thead-dark">
+							<tr>
+								<th>NAME</th>
+								<th>ADDRESS</th>
+								<th>CREDIT/DEBIT HEAD</th>
+								<th>AMOUNT</th>
+								<th>PAYMENT GATEWAY</th>
+								<th>CURRENT DATE</th>
+								<th>DATE</th>
+								<th>TRADE BY</th>
+								<th>ACTION</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="tempList : ${listAll}">
+								<td th:text="${tempList.name}"></td>
+								<td th:text="${tempList.address}"></td>
+								<td th:text="${tempList.trade_head}"></td>
+								<td th:text="${tempList.amount}"></td>
+								<td th:text="${tempList.wop}"></td>
+								<td th:text="${tempList.date}"></td>
+								<td th:text="${tempList.yot}"></td>
+								<td th:text="${tempList.trade_by}"></td>
+								<td><a th:href="@{/mosque/update(id=${tempList.id})}"
+									class="btn btn-info btn-sm">Update</a><a
+									th:href="@{/mosque/delete(id=${tempList.id})}"
+									onclick="if(!(confirm('Are you sure you want to update?'))) return false"
+									class="btn btn-danger btn-sm">Delete</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		 &emsp;;
+		<div class="pagination">
+			Total Items : [[${totalItems}]] - Page [[${currentPage}]] &emsp; of
+			&emsp; [[${totalPages}]] &emsp; - &emsp; <a
+				th:if="${currentPage > 1}" th:href="@{/mosque/page/1}">&emsp;First&emsp;</a> <span
+				th:unless="${currentPage > 1 }"> &emsp;First&emsp;</span> <a
+				th:if="${currentPage > 1}"
+				th:href="@{'/mosque/page/'+${currentPage -1 }}">&emsp;Previous&emsp;</a> <span
+				th:unless="${currentPage > 1 }">&emsp;Previous&emsp;</span> <span
+				th:each="i : ${#numbers.	sequence(1,totalPages)}"> <a
+				th:if="${i != currentPage}" th:href="@{'/mosque/page/'+${i}}">[[${i}]]</a>
+				&emsp; <span th:unless="${i != currentPage}">[[${i}]]</span> &emsp;
+			</span> <a th:if="${currentPage < totalPages}"
+				th:href="@{'/mosque/page/'+${currentPage + 1 }}">&emsp;Next&emsp;</a> <span
+				th:unless="${currentPage < totalPages }">&emsp;Next&emsp;</span> <a
+				th:if="${currentPage < totalPages}"
+				th:href="@{'/mosque/page/'+${totalPages}}">Last</a>&emsp; <span
+				th:unless="${currentPage < totalPages }">&emsp;Last&emsp;</span>
+		</div>
+	</div>
+</body>
+<footer>
+	<div th:replace="header-footer/footer :: myfooter"></div>
+</footer>
+</html>

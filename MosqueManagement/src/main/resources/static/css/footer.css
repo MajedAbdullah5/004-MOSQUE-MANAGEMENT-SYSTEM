@@ -1,0 +1,15 @@
+h1{
+	color:red;
+}
+.footer-page{
+	padding:100px;
+	margin-top:50px;	
+	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+.deleteSocialhref li a{
+	text-decoration:none;
+	color:black;
+}
+.deleteSocialhref li{
+	list-style:none;
+}

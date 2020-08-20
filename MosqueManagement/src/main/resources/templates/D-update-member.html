@@ -1,0 +1,172 @@
+<div th:replace="header-footer/header :: myheader"></div>
+<!-- <body>
+	<div class="list">
+		<div>
+			<h2>&nbsp; &nbsp;UADATE TRADE</h2>
+		</div>
+		<form action="#" th:action="@{/mosque/save}" th:object="${theMosque}"
+			method="POST">
+			<input type="hidden" th:field="*{id}" />
+			<table class="table table-bordered table-striped">
+
+				<tr>
+					<th>TRADING HEAD</th>
+					<th><select th:field="*{trade_head}">
+							<option th:value="'SELECT'" th:text="'SELECT'" selected></option>
+							<option th:value="'NONE'" th:text="'NONE'"></option>
+							<option th:value="'ORG DONATION'" th:text="'ORG DONATION'"></option>
+							<option th:value="'PERSON DONATION'" th:text="'PERSON DONATION'"></option>
+							<option th:value="'LAND SALE'" th:text="'LAND SALE'"></option>
+							<option th:value="'UNNECESSARY EQUIPMENT SALE'"
+								th:text="'UNNECESSARY EQUIPMENT SALE'"></option>
+							<option th:value="'COLLECTION JUMMAH'"
+								th:text="'COLLECTION JUMMAH'"></option>
+							<option th:value="'SPECIAL COLLECTION (FITR)'"
+								th:text="'SPECIAL COLLECTION (FITR)'"></option>
+							<option th:value="'SPECIAL COLLECTION (ADHA)'"
+								th:text="'SPECIAL COLLECTION (ADHA)'"></option>
+							<option th:value="'SPECIAL COLLECTION (JUMMAH)'"
+								th:text="'SPECIAL COLLECTION (JUMMAH)'"></option>
+							<option th:value="'TARAWIH EXTRA'" th:text="'TARAWIH EXTRA'"></option>
+							<option th:value="'SOCIAL'" th:text="'SOCIAL'"></option>
+							<option th:value="'OTHER COLLECTION'"
+								th:text="'OTHER COLLECTION'"></option>
+					</select></th>
+				</tr>
+
+				<tr>
+					<td><input type="text" th:field="*{name}" placeholder="Name" /></td>
+					<td><select th:field="*{wop}">
+							<option th:value="'SELECT'" th:text="'SELECT'" selected></option>
+							<option th:value="'NONE'" th:text="'NONE'"></option>
+							<option th:value="'CHEQUE'" th:text="'CHEQUE'"></option>
+							<option th:value="'CASH'" th:text="'CASH'"></option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><input type="text" th:field="*{address}"
+						placeholder="Address" /></td>
+					<td><input type="text" th:field="*{yot}"
+						placeholder="Year of trade" /></td>
+				</tr>
+				<tr>
+					<td>Amount:</td>
+					<td><input type="text" th:field="*{amount}"
+						placeholder="Amount" /></td>
+
+				</tr>
+				<tr>
+					<td><input type="text" th:field="*{date}" placeholder="date" /></td>
+
+				</tr>
+				<tr>
+					<td><input type="text" th:field="*{trade_by}"
+						placeholder="Trade By" /></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Save"
+						onclick="if(!(confirm('Are you sure?'))) return false" /></td>
+
+				</tr>
+			</table>
+
+		</form>
+	</div>
+</body> -->
+<!-- ***********************************************NEW BOOTSTRAP UPDATE FORM****************************************-->
+<body>
+<head>
+<div th:replace="header-footer/header :: myheader"></div>
+</head>
+<!-- ***********************************************NEW BOOTSTRAP ADD FORM****************************************-->
+<body>
+	<div class="adduserform">
+		<br>
+		<h3>UPDATE INFORMATION</h3>
+		<hr>
+		<br>
+		<form action="#" th:action="@{/mosque/save}" th:object="${theMosque}"
+			method="POST">
+			<input type="hidden" th:field="*{id}" />
+			<div class="form-row">
+				<div class="form-group col-md-9">
+					<!-- <input type="email" class="form-control" id="inputEmail4"> -->
+					<label for="inputEmail4">COLLECTION HEAD</label> <select
+						id="inputState" class="form-control" th:field="*{trade_head}">
+						<option th:value="'SELECT'" th:text="'SELECT'" selected></option>
+						<option th:value="'NONE'" th:text="'NONE'"></option>
+						<option th:value="'ORG DONATION'" th:text="'ORG DONATION'"></option>
+						<option th:value="'PERSON DONATION'" th:text="'PERSON DONATION'"></option>
+						<option th:value="'LAND SALE'" th:text="'LAND SALE'"></option>
+						<option th:value="'UNNECESSARY EQUIPMENT SALE'"
+							th:text="'UNNECESSARY EQUIPMENT SALE'"></option>
+						<option th:value="'COLLECTION JUMMAH'"
+							th:text="'COLLECTION JUMMAH'"></option>
+						<option th:value="'SPECIAL COLLECTION (FITR)'"
+							th:text="'SPECIAL COLLECTION (FITR)'"></option>
+						<option th:value="'SPECIAL COLLECTION (ADHA)'"
+							th:text="'SPECIAL COLLECTION (ADHA)'"></option>
+						<option th:value="'SPECIAL COLLECTION (JUMMAH)'"
+							th:text="'SPECIAL COLLECTION (JUMMAH)'"></option>
+						<option th:value="'TARAWIH EXTRA'" th:text="'TARAWIH EXTRA'"></option>
+						<option th:value="'BANK WITHDRAWN'" th:text="'BANK WITHDRAWN'"></option>
+						<option th:value="'SOCIAL'" th:text="'SOCIAL'"></option>
+						<option th:value="'OTHER COLLECTION'" th:text="'OTHER COLLECTION'"></option>
+					</select>
+				</div>
+				<!-- --------------------------------- WAY OF PAYMENT ------------------------->
+				<div class="form-group col-md-3">
+					<label for="wayofpayment">WAY OF PAYMENT</label> <select
+						class="form-control" id="wayofpayment" th:field="*{wop}">
+						<option th:value="'SELECT'" th:text="'SELECT'" selected></option>
+						<option th:value="'NONE'" th:text="'NONE'"></option>
+						<option th:value="'CHEQUE'" th:text="'CHEQUE'"></option>
+						<option th:value="'CASH'" th:text="'CASH'"></option>
+					</select>
+				</div>
+				<!-- --------------------------------- NAME INPUT ---------------------------->
+				<div class="form-group col-md-12">
+					<label for="name">NAME</label> <input id="name"
+						class="form-control" type="text" th:field="*{name}"
+						placeholder="Name" />
+				</div>
+				<!-- --------------------------------- AMOUNT ---------------------------->
+
+				<div class="form-group col-md-6">
+					<label for="amount">AMOUNT</label> <input ID="amount"
+						class="form-control" type="text" th:field="*{amount}"
+						placeholder="1998/04/03" />
+				</div>
+				<!-- --------------------------------- YEAR OF TRADE --------------------->
+				<div class="form-group col-md-6">
+					<label for="date">DATE</label> <input id="date"
+						class="form-control" type="text" th:field="*{yot}"
+						placeholder="Date" />
+				</div>
+				<!-- --------------------------------- ADDRESS --------------------------->
+				<div class="form-group col-md-12">
+					<label for="address">ADDRESS</label> <input id="address"
+						class="form-control" type="text" th:field="*{address}"
+						placeholder="Address" />
+				</div>
+				<!-- --------------------------------- TRADE BY --------------------------->
+				<div class="form-group col-md-12">
+					<label for="trade_by">TRADE BY</label> <input id="trade_by"
+						class="form-control" type="text" th:field="*{trade_by}"
+						placeholder="Trade By" />
+				</div>
+				<!-- ENDING DIV -->
+			</div>
+			<!-- ENDING DIV -->
+	<!-- <button type="submit" class="btn btn-primary">Sign in</button> -->
+		<input type="submit" class="btn btn-info btn-lg" value="Update"
+						onclick="if(!(confirm('Are you sure?'))) return false" />
+	</form>
+	</div>
+</body>
+
+</body>
+<footer>
+	<div th:replace="header-footer/footer :: myfooter"></div>
+</footer>
+</html>
