@@ -49,11 +49,11 @@ body {
 	margin-top: 150px;
 }
 /*-------------------------------------------------------------*/
-.cover {
+/* .cover {
 	margin-top: 50px;
 	height: 100vh;
 	background-color: rgba(0, 0, 255, 0.3);
-}
+} */
 
 .cardBody {
 	position: relative;
@@ -135,4 +135,43 @@ body {
 	text-shadow: 1px 13px 5px #aba8a8;
 	color:coral;
 	transition:0.5s;
+}
+
+/*----------------------------------------------------Caurosel Image------------------------------------------------*/
+
+#image1{
+	overflow:hidden;
+	background:url("/images/260999.jpg");
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size: cover;
+	height:800px;
+	width:100%;
+}
+#image2{
+	overflow:hidden;
+	background: url("/images/261005.jpg") center no-repeat ;
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size: cover;
+	height:800px;
+	width:100%;
+}
+#image3{
+	overflow:hidden;
+	background: url("/images/261009.jpg") center no-repeat ;
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size: cover;
+	height:800px;
+	width:100%;
+}
+#image4{
+	overflow:hidden;
+	background: url("/images/261014.jpg") center no-repeat;
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size: cover;
+	height:800px;
+	width:100%;
 }
