@@ -186,6 +186,7 @@ public class MosqueTrade_Controller {
 
 	}
 	//Suppose I added this dummy text here
+	//I added another line of code to test
 	// Special Fitr Collection
 	@GetMapping("/specialFitrCollection")
 	public String specialFitrCollecion(Model theModel) {
