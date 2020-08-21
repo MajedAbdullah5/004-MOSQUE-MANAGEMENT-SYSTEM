@@ -36,6 +36,10 @@ body {
   	margin-left: auto;
  	margin-right: auto;
 }
+.buttons{
+	margin-top:10px;
+	padding:10px;
+}
 .combinelist {
 	margin-top: 100px;
 }
