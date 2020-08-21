@@ -52,16 +52,6 @@
 				<a style="color: #3b5998;" href="#"><i class="fa fa-facebook"></i></a>&emsp;
 				<a style="color: #3f729b;" href="#"><i class="fa fa-instagram"></i></a>&emsp;
 				<a style="color: #00acee" href="#"><i class="fa fa-twitter"></i></a>&emsp;
-
-				<!-- <form class="form-inline my-2 mylg-0" method="post"
-					th:action="@{~/mosque/?logout}">
-					<a sec:authorize="isAnonymous()" th:href="@{~/mosque/admin}"
-						class="btn btn-outline-info my-2 my-sm-0 btn-sm nav-link"
-						type="Submit">ADMIN LOGIN</a>
-					<button sec:authorize="isAuthenticated()"
-						class="btn btn-outline-danger my-2 my-sm-0 btn-sm" type="Submit">LOGOUT</button>
-				</form> -->
-
 				<form th:action="@{/logout}" method="post">
 				<a sec:authorize="isAnonymous()" th:href="@{/mosque/admin}"
 						class="btn btn-outline-info my-2 my-sm-0 btn-sm nav-link"

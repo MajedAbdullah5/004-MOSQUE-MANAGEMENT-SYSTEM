@@ -24,10 +24,18 @@ body {
 }
 
 .list {
-	margin-top: 150px;
+	margin-top: 230px;
 	padding-left: 20px;
+	padding-right:20px;
 }
-
+#loginbox{
+	padding:10px;
+	text-align:center;
+	border:1px solid gray;
+	border-radius:10px;
+  	margin-left: auto;
+ 	margin-right: auto;
+}
 .combinelist {
 	margin-top: 100px;
 }
