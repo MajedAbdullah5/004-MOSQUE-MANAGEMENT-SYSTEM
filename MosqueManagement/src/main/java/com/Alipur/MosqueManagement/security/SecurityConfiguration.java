@@ -26,17 +26,33 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //				.antMatchers("/").permitAll().antMatchers("/mosque/admin").authenticated()
 //				.antMatchers("/mosque/add/**", "/mosque/save/**", "/mosque/list/","/mosque/admin").hasAnyRole("ADMIN", "MODIFIER")
 //				.antMatchers("/mosque/update/**", "/mosque/delete/**").hasRole("ADMIN").and().httpBasic();
+//		http.authorizeRequests()
+//		.antMatchers("/").permitAll().antMatchers("/mosque/admin").authenticated()
+//		.antMatchers("/mosque/add/**", "/mosque/save/**", "/mosque/list/","/mosque/admin").hasAnyRole("ADMIN", "EDITOR")
+//		.antMatchers("/mosque/update/**", "/mosque/delete/**").hasRole("ADMIN")
+//			.and()
+//				.formLogin()
+//					.and()
+//						.logout().permitAll()
+//								.and()
+//								.exceptionHandling()
+//								.accessDeniedPage("/403");
 		http.authorizeRequests()
-		.antMatchers("/").permitAll().antMatchers("/mosque/admin").authenticated()
-		.antMatchers("/mosque/add/**", "/mosque/save/**", "/mosque/list/","/mosque/admin").hasAnyRole("ADMIN", "EDITOR")
+		.antMatchers("/").permitAll()
+		.antMatchers("/mosque/admin").authenticated()
+		.antMatchers("/mosque/add/**", "/mosque/save/**", "/mosque/list/", "/mosque/list","/mosque/admin","/mosque/admin/")
+		.hasAnyRole("ADMIN", "EDITOR")
 		.antMatchers("/mosque/update/**", "/mosque/delete/**").hasRole("ADMIN")
 			.and()
 				.formLogin()
-					.and()
-						.logout().permitAll()
-								.and()
-								.exceptionHandling()
-								.accessDeniedPage("/403");
+				.loginPage("/mosque/login")
+				.permitAll()
+				.and()
+				.logout()
+				.permitAll()
+				.and()
+				.exceptionHandling()
+				.accessDeniedPage("/403");
 	}
 
 	@Bean

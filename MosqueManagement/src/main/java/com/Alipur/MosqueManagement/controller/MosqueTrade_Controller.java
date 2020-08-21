@@ -77,6 +77,12 @@ public class MosqueTrade_Controller {
 		return "B-admin-panel";
 	}
 	
+	//login form
+	@GetMapping("/login")
+	public String getLoginForm() {
+		return "U-custom-login-form";
+	}
+	
 	@GetMapping("/combine-report")
 	public String getCombineReport(Model theModel) {
 		List<Mosque> theMosque = theMosqueService.findAll();		
@@ -185,8 +191,7 @@ public class MosqueTrade_Controller {
 		return "I-collection-jummah";
 
 	}
-	//Suppose I added this dummy text here
-	//I added another line of code to test
+
 	// Special Fitr Collection
 	@GetMapping("/specialFitrCollection")
 	public String specialFitrCollecion(Model theModel) {
