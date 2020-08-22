@@ -22,8 +22,11 @@ public class Mosque {
 	@Column(name = "address")
 	private String address;
 
-	@Column(name = "amount")
-	private int amount;
+	@Column(name = "credit_amount")
+	private double credit_amount;
+	
+	@Column(name = "debit_amount")
+	private double debit_amount;
 
 	@Column(name = "way_of_payment")
 	private String wop;
@@ -39,22 +42,27 @@ public class Mosque {
 
 	@Column(name = "trade_by")
 	private String trade_by;
-
+	
+	@Column(name ="total_balance")
+	private double total_balance;
+	
 	public Mosque() {
-
+	
 	}
 
-	public Mosque(int id, String name, String address, int amount, String wop, String trade_head, String date,
-			String yot, String trade_by) {
+	public Mosque(int id, String name, String address, double credit_amount, double debit_amount, String wop,
+			String trade_head, String date, String yot, String trade_by, double total_balance) {
 		this.id = id;
 		this.name = name;
 		this.address = address;
-		this.amount = amount;
+		this.credit_amount = credit_amount;
+		this.debit_amount = debit_amount;
 		this.wop = wop;
 		this.trade_head = trade_head;
 		this.date = date;
 		this.yot = yot;
 		this.trade_by = trade_by;
+		this.total_balance = total_balance;
 	}
 
 	public int getId() {
@@ -80,22 +88,21 @@ public class Mosque {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
 
-	public String getTrade_head() {
-		return trade_head;
+	public double getCredit_amount() {
+		return credit_amount;
 	}
 
-	public void setTrade_head(String trade_head) {
-		this.trade_head = trade_head;
+	public void setCredit_amount(double credit_amount) {
+		this.credit_amount = credit_amount;
 	}
 
-	public int getAmount() {
-		return amount;
+	public double getDebit_amount() {
+		return debit_amount;
 	}
 
-	public void setAmount(int amount) {
-		this.amount = amount;
+	public void setDebit_amount(double debit_amount) {
+		this.debit_amount = debit_amount;
 	}
 
 	public String getWop() {
@@ -104,6 +111,14 @@ public class Mosque {
 
 	public void setWop(String wop) {
 		this.wop = wop;
+	}
+
+	public String getTrade_head() {
+		return trade_head;
+	}
+
+	public void setTrade_head(String trade_head) {
+		this.trade_head = trade_head;
 	}
 
 	public String getDate() {
@@ -130,10 +145,20 @@ public class Mosque {
 		this.trade_by = trade_by;
 	}
 
+	public double getTotal_balance() {
+		return total_balance;
+	}
+
+	public void setTotal_balance(double total_balance) {
+		this.total_balance = total_balance;
+	}
+
 	@Override
 	public String toString() {
-		return "Mosque [id=" + id + ", name=" + name + ", address=" + address + ", amount=" + amount + ", wop=" + wop
-				+ ", date=" + date + ", yot=" + yot + ", trade_by=" + trade_by + "]";
+		return "Mosque [id=" + id + ", name=" + name + ", address=" + address + ", credit_amount=" + credit_amount
+				+ ", debit_amount=" + debit_amount + ", wop=" + wop + ", trade_head=" + trade_head + ", date=" + date
+				+ ", yot=" + yot + ", trade_by=" + trade_by + ", total_balance=" + total_balance + "]";
 	}
+	
 
 }

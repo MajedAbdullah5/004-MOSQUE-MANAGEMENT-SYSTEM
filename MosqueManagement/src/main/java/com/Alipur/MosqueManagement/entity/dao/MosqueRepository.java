@@ -7,11 +7,14 @@ import org.springframework.data.jpa.repository.Query;
 import com.Alipur.MosqueManagement.entity.Mosque;
 
 public interface MosqueRepository extends JpaRepository<Mosque, Integer> {
+	@Query("SELECT SUM(T.credit_amount)-SUM(T.debit_amount) FROM Mosque T")
+	double totalBalance();
+	
 	@Query("SELECT d FROM Mosque d ORDER BY d.id DESC")
 	List<Mosque> findAll();
 	
 	@Query("SELECT m FROM Mosque m where "
-			+"CONCAT(m.name,m.address,m.amount,m.wop,m.yot)"
+			+"CONCAT(m.name,m.address,m.trade_head,m.credit_amount,m.debit_amount,m.wop,m.yot)"
 			+ " LIKE %?1%")
 	List<Mosque> findAll(String keyword);
 

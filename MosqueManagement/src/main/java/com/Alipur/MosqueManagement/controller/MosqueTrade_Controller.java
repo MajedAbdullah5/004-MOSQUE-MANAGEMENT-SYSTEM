@@ -103,12 +103,19 @@ public class MosqueTrade_Controller {
 		return "T-contributor";
 	}
 
-	// Add trade
+	// Add Credit
 	@GetMapping("/add")
-	public String addTrade(Model theModel) {
+	public String addCredit(Model theModel) {
 		Mosque theMosque = new Mosque();
 		theModel.addAttribute("theMosque", theMosque);
-		return "C-add-member";
+		return "C-add-credit";
+	}
+	// Add Debit
+	@GetMapping("/addDebit")
+	public String addDebit(Model theModel) {
+		Mosque theMosque = new Mosque();
+		theModel.addAttribute("theMosque", theMosque);
+		return "CC-add-debit";
 	}
 
 	// save Account

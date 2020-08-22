@@ -5,7 +5,7 @@
 <body>
 	<div class="adduserform">
 		<br>
-		<h3>ADD INFORMATION</h3>
+		<h3>DEBIT HEAD</h3>
 		<hr>
 		<br>
 		<form action="#" th:action="@{/mosque/save}" th:object="${theMosque}"
@@ -55,8 +55,8 @@
 				<!-- --------------------------------- AMOUNT ---------------------------->
 
 				<div class="form-group col-md-6">
-					<label for="amount">AMOUNT</label> <input ID="amount"
-						class="form-control" type="text" th:field="*{amount}"
+					<label for="debit_amount">AMOUNT</label> <input ID="debit_amount"
+						class="form-control" type="text" th:field="*{debit_amount}"
 						placeholder="Amount" />
 				</div>
 				<!-- --------------------------------- YEAR OF TRADE --------------------->
@@ -77,6 +77,7 @@
 						class="form-control" type="text" th:field="*{trade_by}"
 						placeholder="Trade By" />
 				</div>
+				
 				<!-- ENDING DIV -->
 			</div>
 			<!-- ENDING DIV -->

@@ -20,10 +20,13 @@
 								<th>NAME</th>
 								<th>ADDRESS</th>
 								<th>CREDIT/DEBIT HEAD</th>
-								<th>AMOUNT</th>
+								<th>CREDIT AMOUNT</th>
+								<th>DEBIT AMOUNT</th>
 								<th>PAYMENT GATEWAY</th>
 								<th>DATE</th>
 								<th>TRADE BY</th>
+								<th>TOTAL BALANCE</th>
+								
 							</tr>
 						</thead>
 						<tbody>
@@ -31,10 +34,12 @@
 								<td th:text="${tempList.name}"></td>
 								<td th:text="${tempList.address}"></td>
 								<td th:text="${tempList.trade_head}"></td>
-								<td th:text="${tempList.amount}"></td>
+								<td th:text="${tempList.credit_amount}"></td>
+								<td th:text="${tempList.debit_amount}"></td>
 								<td th:text="${tempList.wop}"></td>
 								<td th:text="${tempList.yot}"></td>
 								<td th:text="${tempList.trade_by}"></td>
+								<td th:text="${tempList.total_balance}"></td>
 							</tr>
 						</tbody>
 					</table>

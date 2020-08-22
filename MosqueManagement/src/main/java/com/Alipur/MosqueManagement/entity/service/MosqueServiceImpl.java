@@ -117,10 +117,22 @@ public class MosqueServiceImpl implements MosqueService {
 	//Search for admin
 	@Override
 	public List<Mosque> listAllForAdmin(String param) {
+		List<Mosque> list = theMosqueRepositoy.findAll(); 
+		double total = 0;
+		for(Mosque mosque : list) {
+			total+= mosque.getCredit_amount()-mosque.getDebit_amount();
+			mosque.setTotal_balance(total);
+		}
+		System.out.println(list.toString());
 		if (param != null) {
 			return theMosqueRepositoy.findAll(param);
 		}
 		return theMosqueRepositoy.findAll();
+	}
+
+	@Override
+	public double totalBalance() {	
+		return theMosqueRepositoy.totalBalance();
 	}
 
 }

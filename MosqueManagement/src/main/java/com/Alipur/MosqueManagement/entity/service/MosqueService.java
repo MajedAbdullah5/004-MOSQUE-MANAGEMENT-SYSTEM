@@ -7,7 +7,8 @@ import org.springframework.data.domain.Page;
 import com.Alipur.MosqueManagement.entity.Mosque;
 
 public interface MosqueService {
-
+	public double totalBalance();
+	
 	public List<Mosque> listAll(String keyword);
 	
 	public List<Mosque> listAllForAdmin(String param);
