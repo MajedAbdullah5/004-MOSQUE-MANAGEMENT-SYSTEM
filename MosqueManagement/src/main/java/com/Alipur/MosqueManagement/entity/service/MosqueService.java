@@ -9,6 +9,8 @@ import com.Alipur.MosqueManagement.entity.Mosque;
 public interface MosqueService {
 
 	public List<Mosque> listAll(String keyword);
+	
+	public List<Mosque> listAllForAdmin(String param);
 
 	public Mosque findById(int theId);
 
@@ -39,7 +41,5 @@ public interface MosqueService {
 	public List<Mosque> bankWithdrawn(String value);
 
 	public List<Mosque> otherCollection(String value);
-
-	public List<Mosque> findPerson(String value);
 
 }

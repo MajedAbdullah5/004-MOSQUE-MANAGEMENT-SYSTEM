@@ -102,24 +102,23 @@ public class MosqueServiceImpl implements MosqueService {
 	}
 
 	@Override
-	public List<Mosque> findPerson(String value) {
-		if (value != null) {
-			return theMosqueRepositoy.findPerson(value.toLowerCase());
-		} else {
-			throw new RuntimeException("USER NOT AVAILABE " + value);
-		}
-
-	}
-
-	@Override
 	public List<Mosque> bankWithdrawn(String value) {
 		return theMosqueRepositoy.bankWithdrawn(value);
 	}
-
+//Search for user
 	@Override
 	public List<Mosque> listAll(String keyword) {
 		if (keyword != null) {
 			return theMosqueRepositoy.findAll(keyword);
+		}
+		return theMosqueRepositoy.findAll();
+	}
+	
+	//Search for admin
+	@Override
+	public List<Mosque> listAllForAdmin(String param) {
+		if (param != null) {
+			return theMosqueRepositoy.findAll(param);
 		}
 		return theMosqueRepositoy.findAll();
 	}

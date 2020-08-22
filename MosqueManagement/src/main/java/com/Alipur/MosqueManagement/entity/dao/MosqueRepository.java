@@ -7,8 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import com.Alipur.MosqueManagement.entity.Mosque;
 
 public interface MosqueRepository extends JpaRepository<Mosque, Integer> {
-
-	@Query("SELECT m FROM Mosque m where " + "CONCAT(m.name, m.address, m.amount, m.wop, m.date, m.trade_head)"
+	@Query("SELECT d FROM Mosque d ORDER BY d.id DESC")
+	List<Mosque> findAll();
+	
+	@Query("SELECT m FROM Mosque m where "
+			+"CONCAT(m.name,m.address,m.amount,m.wop,m.yot)"
 			+ " LIKE %?1%")
 	List<Mosque> findAll(String keyword);
 
