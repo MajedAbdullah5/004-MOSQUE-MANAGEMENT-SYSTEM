@@ -1,13 +1,19 @@
 <div th:replace="header-footer/header :: myheader"></div>
 <body>
 	<div>
-		<div>
-			<div class="list">
+		<div class="adminlist">
+			<div>
 				<div>
-					<h3>&nbsp;&nbsp;COMBINED REPORT OF INCOME AND EXP.</h3>
+					<h3>COMBINED REPORT OF INCOME AND EXP.</h3>
 				</div>
 				<br>
 				<div style="overflow-x: auto;">
+					<div>
+						<form action="/mosque/list">
+							<input type="text" Placeholder="Search" name="keyword" /> <input
+								type="submit" value="Search" />
+						</form>
+					</div>
 					<table class="table table-bordered table-striped">
 						<thead class="thead-dark">
 							<tr>
@@ -42,25 +48,6 @@
 					</table>
 				</div>
 			</div>
-		</div>
-		 &emsp;;
-		<div class="pagination">
-			Total Items : [[${totalItems}]] - Page [[${currentPage}]] &emsp; of
-			&emsp; [[${totalPages}]] &emsp; - &emsp; <a
-				th:if="${currentPage > 1}" th:href="@{/mosque/page/1}">&emsp;First&emsp;</a> <span
-				th:unless="${currentPage > 1 }"> &emsp;First&emsp;</span> <a
-				th:if="${currentPage > 1}"
-				th:href="@{'/mosque/page/'+${currentPage -1 }}">&emsp;Previous&emsp;</a> <span
-				th:unless="${currentPage > 1 }">&emsp;Previous&emsp;</span> <span
-				th:each="i : ${#numbers.	sequence(1,totalPages)}"> <a
-				th:if="${i != currentPage}" th:href="@{'/mosque/page/'+${i}}">[[${i}]]</a>
-				&emsp; <span th:unless="${i != currentPage}">[[${i}]]</span> &emsp;
-			</span> <a th:if="${currentPage < totalPages}"
-				th:href="@{'/mosque/page/'+${currentPage + 1 }}">&emsp;Next&emsp;</a> <span
-				th:unless="${currentPage < totalPages }">&emsp;Next&emsp;</span> <a
-				th:if="${currentPage < totalPages}"
-				th:href="@{'/mosque/page/'+${totalPages}}">Last</a>&emsp; <span
-				th:unless="${currentPage < totalPages }">&emsp;Last&emsp;</span>
 		</div>
 	</div>
 </body>

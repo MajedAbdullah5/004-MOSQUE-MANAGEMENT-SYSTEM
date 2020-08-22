@@ -1,20 +1,17 @@
 package com.Alipur.MosqueManagement.controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.Alipur.MosqueManagement.entity.Mosque;
 import com.Alipur.MosqueManagement.entity.service.MosqueService;
 
@@ -51,7 +48,7 @@ public class MosqueTrade_Controller {
 
 	@Value("${SOCIAL}")
 	private String social_Collection;
-	
+
 	@Value("${BANK.WITHDRAWN}")
 	private String bank_withdrawn;
 
@@ -76,50 +73,35 @@ public class MosqueTrade_Controller {
 	public String getLogin() {
 		return "B-admin-panel";
 	}
-	
-	//login form
+
+	// login form
 	@GetMapping("/login")
 	public String getLoginForm() {
 		return "U-custom-login-form";
 	}
-	
+
+	// Find all feature and search
 	@GetMapping("/combine-report")
-	public String getCombineReport(Model theModel) {
-		List<Mosque> theMosque = theMosqueService.findAll();		
+	public String getCombineReport(Model theModel, @Param("keyword") String keyword) {
+		List<Mosque> theMosque = theMosqueService.listAll(keyword);
 		theModel.addAttribute("listforuser", theMosque);
 		return "S-list-for-users";
 	}
 
-	// Test Pagination
+	// Find all feature and search for admin
 	@GetMapping("/list")
-	public String listAll(Model theModel) {
-		return listByPage(theModel, 1);
+	public String getCombineReportForAdmin(Model theModel, @Param("keyword") String keyword) {
+		List<Mosque> theMosque = theMosqueService.listAll(keyword);
+		theModel.addAttribute("listAll", theMosque);
+		return "listAll";
 	}
-	
-	// Contributor 
+
+	// Contributor
 	@GetMapping("/contributor")
-	public String getContributor(){
+	public String getContributor() {
 		return "T-contributor";
 	}
-	
-	
-	
 
-	//Display  page pagination	
-	@GetMapping("/page/{pageNumber}")
-	public String listByPage(Model theModel, @PathVariable("pageNumber") int currentPage ) {
-		Page<Mosque> theMosque = theMosqueService.findAllByPage(currentPage);
-		long totalItems = theMosque.getTotalElements();
-		int totalPages = theMosque.getTotalPages();				
-		List<Mosque> listAll = theMosque.getContent();		
-		theModel.addAttribute("currentPage", currentPage);
-		theModel.addAttribute("totalItems", totalItems);
-		theModel.addAttribute("totalPages", totalPages);
-		theModel.addAttribute("listAll", listAll);
-		theModel.addAttribute("listforuser", listAll);
-		return "listAll";
-		
-	} 
 	// Add trade
 	@GetMapping("/add")
 	public String addTrade(Model theModel) {
@@ -231,8 +213,8 @@ public class MosqueTrade_Controller {
 		theModel.addAttribute("socialCollectionList", theMosque);
 		return "N-social-collection";
 	}
-	
-	//bank withdrawn
+
+	// bank withdrawn
 	@GetMapping("/bankWithdrawn")
 	public String bankWithdrawn(Model theModel) {
 		List<Mosque> theMosque = theMosqueService.socialCollection(bank_withdrawn);
@@ -247,24 +229,6 @@ public class MosqueTrade_Controller {
 		theModel.addAttribute("otherCollectionList", theMosque);
 		return "O-other-collection";
 	}
-
-	// Search People
-//	@GetMapping("/findPeople")
-//	public String findPeople(Model theModel,@ModelAttribute("myFormObject") Mosque myFormObject ,BindingResult result) {
-//		List<Mosque> products = theMosqueService.findAll(myFormObject.getName());
-//		theModel.addAttribute("products",products);
-//		return "listAll";
-//	}
-
-//	@GetMapping("/findPeople")
-//	public String getName(@RequestParam String name, Model theModel) {
-//		System.out.println("Name " + name);
-//		List<Mosque> theName = theMosqueService.findPerson(name);
-//		theModel.addAttribute("name",name);
-//		//theModel.addAttribute("theName",theName);
-//		System.out.println(theName);
-//		return "listAll";
-//	}
 
 	// Cancel Payment
 	@GetMapping("/cancel")

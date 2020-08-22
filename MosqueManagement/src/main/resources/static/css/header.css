@@ -22,24 +22,27 @@ body {
 	border-bottom: 1px solid orange;
 	transition: 1s;
 }
+/* User view page */
+.userlist {
+	padding-top: 60px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
 
-.list {
-	margin-top: 230px;
-	padding-left: 20px;
-	padding-right:20px;
+#loginbox {
+	padding: 10px;
+	text-align: center;
+	border: 1px solid gray;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
 }
-#loginbox{
-	padding:10px;
-	text-align:center;
-	border:1px solid gray;
-	border-radius:10px;
-  	margin-left: auto;
- 	margin-right: auto;
+
+.buttons {
+	margin-top: 10px;
+	padding: 10px;
 }
-.buttons{
-	margin-top:10px;
-	padding:10px;
-}
+
 .combinelist {
 	margin-top: 100px;
 }
@@ -48,12 +51,6 @@ body {
 	padding: 120px;
 	margin-top: 150px;
 }
-/*-------------------------------------------------------------*/
-/* .cover {
-	margin-top: 50px;
-	height: 100vh;
-	background-color: rgba(0, 0, 255, 0.3);
-} */
 
 .cardBody {
 	position: relative;
@@ -123,55 +120,64 @@ body {
 	margin-right: 200px;
 }
 /*----------------------------------------------------ADMIN PANEL------------------------------------------------*/
-.headOfCollections li{
-	
-	list-style:none;
+.headOfCollections li {
+	list-style: none;
 }
-.headOfCollections li a{
-	text-decoration:none;
-	color:black;
+
+.headOfCollections li a {
+	text-decoration: none;
+	color: black;
 }
-.headOfCollections li a:hover{
+
+.headOfCollections li a:hover {
 	text-shadow: 1px 13px 5px #aba8a8;
-	color:coral;
-	transition:0.5s;
+	color: coral;
+	transition: 0.5s;
+}
+/* Admin view page */
+.adminlist {
+	padding-top: 150px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 /*----------------------------------------------------Caurosel Image------------------------------------------------*/
+#image1 {
+	overflow: hidden;
+	background: url("/images/260999.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 800px;
+	width: 100%;
+}
 
-#image1{
-	overflow:hidden;
-	background:url("/images/260999.jpg");
-	background-repeat:no-repeat;
-	background-position:center;
+#image2 {
+	overflow: hidden;
+	background: url("/images/261005.jpg") center no-repeat;
+	background-repeat: no-repeat;
+	background-position: center;
 	background-size: cover;
-	height:800px;
-	width:100%;
+	height: 800px;
+	width: 100%;
 }
-#image2{
-	overflow:hidden;
-	background: url("/images/261005.jpg") center no-repeat ;
-	background-repeat:no-repeat;
-	background-position:center;
+
+#image3 {
+	overflow: hidden;
+	background: url("/images/261009.jpg") center no-repeat;
+	background-repeat: no-repeat;
+	background-position: center;
 	background-size: cover;
-	height:800px;
-	width:100%;
+	height: 800px;
+	width: 100%;
 }
-#image3{
-	overflow:hidden;
-	background: url("/images/261009.jpg") center no-repeat ;
-	background-repeat:no-repeat;
-	background-position:center;
-	background-size: cover;
-	height:800px;
-	width:100%;
-}
-#image4{
-	overflow:hidden;
+
+#image4 {
+	overflow: hidden;
 	background: url("/images/261014.jpg") center no-repeat;
-	background-repeat:no-repeat;
-	background-position:center;
+	background-repeat: no-repeat;
+	background-position: center;
 	background-size: cover;
-	height:800px;
-	width:100%;
+	height: 800px;
+	width: 100%;
 }

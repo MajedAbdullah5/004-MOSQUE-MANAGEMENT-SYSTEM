@@ -7,8 +7,8 @@ import org.springframework.data.domain.Page;
 import com.Alipur.MosqueManagement.entity.Mosque;
 
 public interface MosqueService {
-		
-	public List<Mosque> findAll();
+
+	public List<Mosque> listAll(String keyword);
 
 	public Mosque findById(int theId);
 
@@ -35,12 +35,11 @@ public interface MosqueService {
 	public List<Mosque> tarawihExtra(String value);
 
 	public List<Mosque> socialCollection(String value);
-	
+
 	public List<Mosque> bankWithdrawn(String value);
 
 	public List<Mosque> otherCollection(String value);
-	
+
 	public List<Mosque> findPerson(String value);
 
-	public Page<Mosque> findAllByPage(int pageNumber);
 }

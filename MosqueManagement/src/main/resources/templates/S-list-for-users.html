@@ -1,61 +1,46 @@
 <div th:replace="header-footer/header :: myheader"></div>
 <body>
 	<div>
-		<div>
+		<div class="userlist">
 			<div class="combinelist">
 				<div>
-					<h3>&nbsp;&nbsp;COMBINED REPORT OF INCOME AND EXP.</h3>
+					<h3>COMBINED REPORT OF INCOME AND EXP.</h3>
 				</div>
 				<br>
-				<div style="overflow-x:auto;">
-				<table class="table table-bordered table-striped">
-					<thead class="thead-dark">
-						<tr>
-							<th>NAME</th>
-							<th>ADDRESS</th>
-							<th>CREDIT/DEBIT HEAD</th>
-							<th>AMOUNT</th>
-							<th>PAYMENT GATEWAY</th>
-							<th>DATE</th>
-							<th>TRADE BY</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="tempList : ${listforuser}">
-							<td th:text="${tempList.name}"></td>
-							<td th:text="${tempList.address}"></td>
-							<td th:text="${tempList.trade_head}"></td>
-							<td th:text="${tempList.amount}"></td>
-							<td th:text="${tempList.wop}"></td>
-							<td th:text="${tempList.yot}"></td>
-							<td th:text="${tempList.trade_by}"></td>
-						</tr>
-					</tbody>
-				</table>
+				<div style="overflow-x: auto;">
+					<div>
+						<form action="/mosque/combine-report">
+							<input type="text" Placeholder="Search" name="keyword" /> <input
+								type="submit" value="Search" />
+						</form>
+					</div>
+					<table class="table table-bordered table-striped">
+						<thead class="thead-dark">
+							<tr>
+								<th>NAME</th>
+								<th>ADDRESS</th>
+								<th>CREDIT/DEBIT HEAD</th>
+								<th>AMOUNT</th>
+								<th>PAYMENT GATEWAY</th>
+								<th>DATE</th>
+								<th>TRADE BY</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="tempList : ${listforuser}">
+								<td th:text="${tempList.name}"></td>
+								<td th:text="${tempList.address}"></td>
+								<td th:text="${tempList.trade_head}"></td>
+								<td th:text="${tempList.amount}"></td>
+								<td th:text="${tempList.wop}"></td>
+								<td th:text="${tempList.yot}"></td>
+								<td th:text="${tempList.trade_by}"></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
-		&nbsp;
-		<!-- 
-				<div class="pagination">
-			Total Items : [[${totalItems}]] - Page [[${currentPage}]] &nbsp; of
-			&nbsp; [[${totalPages}]] &nbsp; - &nbsp; <a
-				th:if="${currentPage > 1}" th:href="@{/mosque/page/1}">First</a> <span
-				th:unless="${currentPage > 1 }">First</span> &nbsp; <a
-				th:if="${currentPage > 1}"
-				th:href="@{'/mosque/page/'+${currentPage -1 }}">Previous</a> <span
-				th:unless="${currentPage > 1 }">Previous</span> <span
-				th:each="i : ${#numbers.sequence(1,totalPages)}"> <a
-				th:if="${i != currentPage}" th:href="@{'/mosque/page/'+${i}}">[[${i}]]</a>
-				&nbsp; <span th:unless="${i != currentPage}">[[${i}]]</span> &nbsp;
-			</span> <a th:if="${currentPage < totalPages}"
-				th:href="@{'/mosque/page/'+${currentPage + 1 }}">Next</a>&emsp; <span
-				th:unless="${currentPage < totalPages }">Next</span> &nbsp; <a
-				th:if="${currentPage < totalPages}"
-				th:href="@{'/mosque/page/'+${totalPages}}">Last</a>&emsp; <span
-				th:unless="${currentPage < totalPages }">&emsp;Last</span>
-		</div>
-		 -->
 	</div>
 </body>
 <footer>

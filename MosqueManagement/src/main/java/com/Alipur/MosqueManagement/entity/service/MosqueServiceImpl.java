@@ -21,7 +21,7 @@ public class MosqueServiceImpl implements MosqueService {
 	public MosqueServiceImpl(MosqueRepository theMosqueRepositoy) {
 		this.theMosqueRepositoy = theMosqueRepositoy;
 	}
-	
+
 	@Override
 	public Mosque findById(int theId) {
 
@@ -112,23 +112,16 @@ public class MosqueServiceImpl implements MosqueService {
 	}
 
 	@Override
-	public Page<Mosque> findAllByPage(int pageNumber) {
-		Sort sort = Sort.by("id").descending();
-		Pageable pageable = PageRequest.of(pageNumber - 1, 10,sort);
-		return theMosqueRepositoy.findAll(pageable);
-	}
-
-	@Override
-	public List<Mosque> bankWithdrawn(String value) {		
+	public List<Mosque> bankWithdrawn(String value) {
 		return theMosqueRepositoy.bankWithdrawn(value);
 	}
 
 	@Override
-	public List<Mosque> findAll() {	
+	public List<Mosque> listAll(String keyword) {
+		if (keyword != null) {
+			return theMosqueRepositoy.findAll(keyword);
+		}
 		return theMosqueRepositoy.findAll();
 	}
-
-	
-
 
 }
