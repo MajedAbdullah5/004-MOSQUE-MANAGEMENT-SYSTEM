@@ -1,5 +1,6 @@
 package com.Alipur.MosqueManagement.entity.service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -105,6 +106,7 @@ public class MosqueServiceImpl implements MosqueService {
 	public List<Mosque> bankWithdrawn(String value) {
 		return theMosqueRepositoy.bankWithdrawn(value);
 	}
+
 //Search for user
 	@Override
 	public List<Mosque> listAll(String keyword) {
@@ -113,26 +115,21 @@ public class MosqueServiceImpl implements MosqueService {
 		}
 		return theMosqueRepositoy.findAll();
 	}
-	
-	//Search for admin
+
+	// Search for admin
 	@Override
 	public List<Mosque> listAllForAdmin(String param) {
-		List<Mosque> list = theMosqueRepositoy.findAll(); 
+		List<Mosque> list = theMosqueRepositoy.findAll();
 		double total = 0;
-		for(Mosque mosque : list) {
-			total+= mosque.getCredit_amount()-mosque.getDebit_amount();
+		for (Mosque mosque : list) {
+			total += mosque.getCredit_amount() - mosque.getDebit_amount();
 			mosque.setTotal_balance(total);
 		}
-		System.out.println(list.toString());
+		list.forEach(System.out::println);
+		list.sort(Comparator.comparing(Mosque::getId).reversed());
 		if (param != null) {
 			return theMosqueRepositoy.findAll(param);
 		}
-		return theMosqueRepositoy.findAll();
+		return list;
 	}
-
-	@Override
-	public double totalBalance() {	
-		return theMosqueRepositoy.totalBalance();
-	}
-
 }

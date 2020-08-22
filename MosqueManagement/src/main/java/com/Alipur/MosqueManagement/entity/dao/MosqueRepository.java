@@ -10,14 +10,14 @@ public interface MosqueRepository extends JpaRepository<Mosque, Integer> {
 	@Query("SELECT SUM(T.credit_amount)-SUM(T.debit_amount) FROM Mosque T")
 	double totalBalance();
 	
-	@Query("SELECT d FROM Mosque d ORDER BY d.id DESC")
-	List<Mosque> findAll();
 	
 	@Query("SELECT m FROM Mosque m where "
 			+"CONCAT(m.name,m.address,m.trade_head,m.credit_amount,m.debit_amount,m.wop,m.yot)"
 			+ " LIKE %?1%")
 	List<Mosque> findAll(String keyword);
 
+	//This one you can replace, without query
+	//how?
 	// Organization donation
 	@Query("SELECT org FROM Mosque org WHERE org.trade_head=?1 ORDER BY org.id DESC")
 	List<Mosque> orgDonation(String value);
