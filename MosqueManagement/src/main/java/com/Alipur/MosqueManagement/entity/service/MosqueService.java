@@ -8,7 +8,7 @@ import com.Alipur.MosqueManagement.entity.Mosque;
 
 public interface MosqueService {
 	
-	public List<Mosque> listAll(String keyword);
+//	public List<Mosque> listAll(String keyword);
 	
 	public List<Mosque> listAllForAdmin(String param);
 

@@ -83,10 +83,9 @@ public class MosqueTrade_Controller {
 	// Find all feature and search
 	@GetMapping("/combine-report")
 	public String getCombineReport(Model theModel, @Param("keyword") String keyword) {	
-		List<Mosque> theMosque = theMosqueService.listAll(keyword);
+		List<Mosque> theMosque = theMosqueService.listAllForAdmin(keyword);
 		theModel.addAttribute("listforuser", theMosque);
-		System.out.println(theMosque.toString());
-		return "S-list-for-users";
+		return "SS-list-for-users";
 	}
 
 	// Find all feature and search for admin

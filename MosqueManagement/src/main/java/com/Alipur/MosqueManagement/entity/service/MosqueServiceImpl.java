@@ -108,13 +108,14 @@ public class MosqueServiceImpl implements MosqueService {
 	}
 
 //Search for user
-	@Override
-	public List<Mosque> listAll(String keyword) {
-		if (keyword != null) {
-			return theMosqueRepositoy.findAll(keyword);
-		}
-		return theMosqueRepositoy.findAll();
-	}
+//	@Override
+//	public List<Mosque> listAll(String keyword) {
+//		List<Mosque> list = theMosqueRepositoy.findAll();
+//		if (keyword != null) {
+//			return theMosqueRepositoy.findAll(keyword);
+//		}
+//		return theMosqueRepositoy.findAll();
+//	}
 
 	// Search for admin
 	@Override
