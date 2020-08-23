@@ -7,54 +7,129 @@
 		<div>
 			<h3>&nbsp;ADMIN PANEL</h3>
 		</div>
-		
+
 		<br>
-		<div class="container">
-		<hr>
-			<div>
-			<a class="btn btn-info btn-lg" th:href="@{/mosque/addDebit}">DEBIT HEAD
-				</a>
-		</div>
-		<div>
-			<a class="btn btn-info btn-lg" th:href="@{/mosque/add}">COLLECTION HEAD
-				</a>
-		</div>
-			<ul class="headOfCollections">
-				<li><a th:href="@{/mosque/list}">LIST OF ALL</a></li>
-				</br>
-				<li><a c th:href="@{/mosque/orgDonation}">ORGANIZATION
-						DONATION</a></li>
-				</br>
-				<li><a th:href="@{/mosque/personDonation}">PERSON DONATION</a></li>
-				</br>
-				<li><a th:href="@{/mosque/landSale}">LAND SALE</a></li>
-				</br>
-				<li><a th:href="@{/mosque/unnecessaryEquipmentSale}">UNNECESSARY
-						EQUIPMENT SALE</a></li>
-				</br>
-				<li><a th:href="@{/mosque/bankWithdrawn}">BANK WITHDRAWN</a></li>
-				</br>
-				<li><a th:href="@{/mosque/collectionJummah}">RETAIL
-						COLLECTION OF JUMMAH</a></li>
-				</br>
-				<li><a th:href="@{/mosque/specialFitrCollection}">SPECIAL
-						COLLECTION OF FITR</a></li>
-				</br>
-				<li><a th:href="@{/mosque/specialAdhaCollection}">SPECIAL
-						COLLECTION OF ADHA</a></li>
-				</br>
-				<li><a th:href="@{/mosque/specialJummahCollection}">SPECIAL
-						COLLECTION OF JUMMAH</a></li>
-				</br>
-				<li><a th:href="@{/mosque/tarawihExtra}">TARAWIH EXTRA</a></li>
-				</br>
-				<li><a th:href="@{/mosque/bankWithdrawn}">BANK WITHDRAWN</a></li>
-				</br>
-				<li><a th:href="@{/mosque/social}">SOCIAL COLLECTION</a></li>
-				</br>
-				<li><a th:href="@{/mosque/other}">OTHERS COLLECTION</a></li>
-				<br>
-			</ul>
+		<div class="container adminPanel">
+			<hr>
+			<div class="row">
+				<div class="col-md-12 listofall">
+					<a th:href="@{/mosque/list}">LIST OF ALL</a>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-6">
+					<a class="btn btn-info btn-lg" th:href="@{/mosque/add}">CREDIT
+						HEAD </a>
+				</div>
+				<div class="col-md-6">
+					<a class="btn btn-info btn-lg" th:href="@{/mosque/addDebit}">DEBIT
+						HEAD </a>
+				</div>
+			</div>
+			<hr>
+
+			<div class="row">
+				<div class="col-md-6">
+					<a th:href="@{/mosque/landSale}">LAND SALE</a>
+				</div>
+				<div class="col-md-6">
+					<a th:href="@{/mosque/list}">LIST OF ALL</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<a th:href="@{/mosque/tarawihExtra}">TARAWIH EXTRA</a>
+				</div>
+				<div class="col-md-6">
+					<a th:href="@{/mosque/list}">LIST OF ALL</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<a th:href="@{/mosque/bankWithdrawn}">BANK WITHDRAWN</a>
+				</div>
+				<div class="col-md-6">
+					<a th:href="@{/mosque/list}">LIST OF ALL</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<a th:href="@{/mosque/personDonation}">PERSON DONATION</a>
+				</div>
+				<div class="col-md-6">
+					<a th:href="@{/mosque/list}">LIST OF ALL</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<a th:href="@{/mosque/social}">SOCIAL COLLECTION</a>
+				</div>
+				<div class="col-md-6">
+					<a th:href="@{/mosque/list}">LIST OF ALL</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<a th:href="@{/mosque/other}">OTHERS COLLECTION</a>
+				</div>
+				<div class="col-md-6">
+					<a th:href="@{/mosque/list}">LIST OF ALL</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<a c th:href="@{/mosque/orgDonation}">ORGANIZATION DONATION</a>
+				</div>
+				<div class="col-md-6">
+					<a th:href="@{/mosque/list}">LIST OF ALL</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<a th:href="@{/mosque/specialFitrCollection}">SPECIAL
+						COLLECTION OF FITR</a>
+				</div>
+				<div class="col-md-6">
+					<a th:href="@{/mosque/list}">LIST OF ALL</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<a th:href="@{/mosque/specialAdhaCollection}">SPECIAL
+						COLLECTION OF ADHA</a>
+				</div>
+				<div class="col-md-6">
+					<a th:href="@{/mosque/list}">LIST OF ALL</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<a th:href="@{/mosque/unnecessaryEquipmentSale}">UNNECESSARY
+						EQUIPMENT SALE</a>
+				</div>
+				<div class="col-md-6">
+					<a th:href="@{/mosque/list}">LIST OF ALL</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<a th:href="@{/mosque/collectionJummah}">RETAIL COLLECTION OF
+						JUMMAH</a>
+				</div>
+				<div class="col-md-6">
+					<a th:href="@{/mosque/list}">LIST OF ALL</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<a th:href="@{/mosque/specialJummahCollection}">SPECIAL
+						COLLECTION OF JUMMAH</a>
+				</div>
+				<div class="col-md-6">
+					<a th:href="@{/mosque/list}">LIST OF ALL</a>
+				</div>
+			</div>
 		</div>
 		<br>
 	</div>

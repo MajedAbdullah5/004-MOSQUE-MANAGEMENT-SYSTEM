@@ -191,3 +191,23 @@ body {
 .list{
 	padding:150 0 0 0;
 }
+/*----------------------- B-admin-panel.html -----------------------------*/
+
+.row{
+	text-align:center;
+	padding:5px;
+}
+.listofall a{
+	padding:10 15 10 15;
+	color:white;
+	font-size:20px;
+	text-decoration: none;
+	background-color: coral;
+	border-radius: 5px;
+}
+.listofall a:hover{	
+	background-color: #0080c0;
+	transition:0.3s;
+	
+}
+
