@@ -1,27 +1,33 @@
-body {
-	font-family: Verdana, Geneva, sans-serif;
-}
 
+/*------------------------------------------ NavBar -----------------------------------*/
 #navbar {
 	position: fixed;
-	padding: 20px;
+	padding: 15px;
 	width: 100%;
 	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
-
 .navbarNav {
-	padding: 20px;
+	padding: 10px;
 }
-
 .nav-item {
-	margin: 5px;
+	margin:5px;
+	padding: 5px;
 	font-size: 17px;
 }
 
 .nav-item:hover {
-	border-bottom: 1px solid orange;
+	border-bottom: 1px solid yellow;
 	transition: 1s;
 }
+.icon{
+	color:#CFB53B;
+	padding:8px;
+}
+li#donateButton.nav-item{
+	padding:6px;
+	border-bottom: 1px solid #f8f9fa!important;
+}
+/* ------------------------- */
 /* User view page */
 .userlist {
 	padding-top: 60px;
@@ -46,13 +52,12 @@ body {
 .combinelist {
 	margin-top: 100px;
 }
-
 .cancelledPayment {
 	padding: 120px;
 	margin-top: 150px;
 }
 
-.cardBody {
+/* .cardBody {
 	position: relative;
 	display: block;
 	border: 2px solid coral;
@@ -61,34 +66,10 @@ body {
 	left: 50px;
 	width: 50vw;
 	height: 30vw;
-}
-
-.cardBody h3 h4 h5 {
-	color: white;
-}
-
-.cardTitle {
-	color: white;
-	font-weight: bold;
-	font-size: 40px;
-}
-
-.cardText {
-	color: #FFDEAD;
-}
-
-.donate-card {
-	height: 200px;
-}
-
+} */
 #carouselExampleSlidesOnly {
 	height: 800px;
 }
-
-.card-container {
-	padding: 10px;
-}
-
 .image-size {
 	background-size: cover;
 	height: 300px;
@@ -113,7 +94,7 @@ body {
 	background-size: cover;
 	height: 200px;
 }
-/* --------------------------------------------------- ADD USER FORM ---------------------------------------------*/
+/* -------------------------------------------------- ADD USER FORM ---------------------------------------------*/
 .adduserform {
 	margin-top: 200px;
 	margin-left: 200px;
@@ -140,7 +121,6 @@ body {
 	padding-left: 10px;
 	padding-right: 10px;
 }
-
 /*----------------------------------------------------Caurosel Image------------------------------------------------*/
 #image1 {
 	overflow: hidden;
