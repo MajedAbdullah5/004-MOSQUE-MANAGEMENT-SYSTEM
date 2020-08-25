@@ -61,7 +61,7 @@ public class MosqueTrade_Controller {
 	public MosqueTrade_Controller(MosqueService theMosqueService) {
 		this.theMosqueService = theMosqueService;
 	}
-
+	
 	// Home page
 	@GetMapping("/")
 	public String getHome() {
@@ -87,6 +87,12 @@ public class MosqueTrade_Controller {
 		theModel.addAttribute("listforuser", theMosque);
 		return "SS-list-for-users";
 	}
+	
+	//Access Denied
+		@GetMapping("/403")
+		public String accessDenied() {
+		return "V-access-denied";
+		}
 
 	// Find all feature and search for admin
 	@GetMapping("/list")

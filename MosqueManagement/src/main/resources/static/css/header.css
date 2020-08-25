@@ -20,8 +20,14 @@
 	transition: 1s;
 }
 .icon{
-	color:#CFB53B;
-	padding:8px;
+	color:	#008080;
+	padding:10px;
+}
+.icon:hover{
+	color:	#408080;
+	text-shadow: 2px 2px red;
+	transition: 1s;
+	
 }
 li#donateButton.nav-item{
 	padding:6px;
