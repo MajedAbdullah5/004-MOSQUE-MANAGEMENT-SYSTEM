@@ -6,16 +6,16 @@
 	<div class="adduserform">
 		<br>
 		<h3>CREDIT HEAD</h3>
+
 		<hr>
 		<br>
-		<form action="#" th:action="@{/mosque/save}" th:object="${theMosque}"
-			method="POST">
+		<form action="#" th:action="@{/mosque/save}"
+			th:object="${theMosque}" method="POST">
 			<div class="form-row">
 				<div class="form-group col-md-9">
 					<!-- <input type="email" class="form-control" id="inputEmail4"> -->
-					<label for="inputEmail4">COLLECTION HEAD</label> <select
-						id="inputState" class="form-control" th:field="*{trade_head}">
-						<option th:value="'SELECT'" th:text="'SELECT'" selected></option>
+					<label for="inputState">COLLECTION HEAD</label> <select
+						id="inputState" class="form-control" th:field="*{trade_head}" required="required">
 						<option th:value="'NONE'" th:text="'NONE'"></option>
 						<option th:value="'ORG DONATION'" th:text="'ORG DONATION'"></option>
 						<option th:value="'PERSON DONATION'" th:text="'PERSON DONATION'"></option>
@@ -39,8 +39,7 @@
 				<!-- --------------------------------- WAY OF PAYMENT ------------------------->
 				<div class="form-group col-md-3">
 					<label for="wayofpayment">WAY OF PAYMENT</label> <select
-						class="form-control" id="wayofpayment" th:field="*{wop}">
-						<option th:value="'SELECT'" th:text="'SELECT'" selected></option>
+						class="form-control" id="wayofpayment" th:field="*{wop}" required="required">
 						<option th:value="'NONE'" th:text="'NONE'"></option>
 						<option th:value="'CHEQUE'" th:text="'CHEQUE'"></option>
 						<option th:value="'CASH'" th:text="'CASH'"></option>
@@ -50,46 +49,46 @@
 				<div class="form-group col-md-12">
 					<label for="name">NAME</label> <input id="name"
 						class="form-control" type="text" th:field="*{name}"
-						placeholder="Name" />
+						placeholder="Name"  required="required"/>
+					<!--  <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</p>
+						 -->
 				</div>
+
 				<!-- --------------------------------- AMOUNT ---------------------------->
 
 				<div class="form-group col-md-6">
 					<label for="credit_amount">AMOUNT</label> <input ID="credit_amount"
 						class="form-control" type="text" th:field="*{credit_amount}"
-						placeholder="Amount" />
+						placeholder="Amount" required="required"/>
 				</div>
+				<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name
+					Error</p>
 				<!-- --------------------------------- YEAR OF TRADE --------------------->
 				<div class="form-group col-md-6">
 					<label for="date">DATE</label> <input id="date"
 						class="form-control" type="text" th:field="*{yot}"
-						placeholder="Date" />
+						placeholder="DD/MM/YYYY" required="required" />
 				</div>
 				<!-- --------------------------------- ADDRESS --------------------------->
 				<div class="form-group col-md-12">
 					<label for="address">ADDRESS</label> <input id="address"
 						class="form-control" type="text" th:field="*{address}"
-						placeholder="Address" />
+						placeholder="Address" required="required"/>
 				</div>
 				<!-- --------------------------------- TRADE BY --------------------------->
 				<div class="form-group col-md-12">
 					<label for="trade_by">TRADE BY</label> <input id="trade_by"
 						class="form-control" type="text" th:field="*{trade_by}"
-						placeholder="Trade By" />
+						placeholder="Trade By" required="required"/>
 				</div>
-				<div>					
-						<input class="form-control" type="hidden" th:field="*{total_balance}"
-						 />
-				</div>
-				
 				<!-- ENDING DIV -->
 			</div>
 			<!-- ENDING DIV -->
-	<!-- <button type="submit" class="btn btn-primary">Sign in</button> -->
-	<input type="submit" value="Save"
-		onclick="if(!(confirm('Are you sure?'))) return false"
-		class="btn btn-info btn-lg	" />
-	</form>
+			<!-- <button type="submit" class="btn btn-primary">Sign in</button> -->
+			<input type="submit" value="Save"
+				onclick="if(!(confirm('Are you sure?'))) return false"
+				class="btn btn-info btn-lg	" />
+		</form>
 	</div>
 </body>
 <footer>

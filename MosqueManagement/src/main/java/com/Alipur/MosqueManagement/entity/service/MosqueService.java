@@ -2,8 +2,6 @@ package com.Alipur.MosqueManagement.entity.service;
 
 import java.util.List;
 
-import org.springframework.data.domain.Page;
-
 import com.Alipur.MosqueManagement.entity.Mosque;
 
 public interface MosqueService {
@@ -15,6 +13,8 @@ public interface MosqueService {
 	public Mosque findById(int theId);
 
 	public void save(Mosque theMosque);
+	
+//	public void saveDebit(Mosque theMosque);
 
 	public void deleteByid(int theId);
 

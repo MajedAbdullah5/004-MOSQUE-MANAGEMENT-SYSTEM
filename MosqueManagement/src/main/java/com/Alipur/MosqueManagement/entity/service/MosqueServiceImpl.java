@@ -5,10 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.Alipur.MosqueManagement.entity.Mosque;
@@ -40,7 +36,11 @@ public class MosqueServiceImpl implements MosqueService {
 	public void save(Mosque theMosque) {
 		theMosqueRepositoy.save(theMosque);
 	}
-
+//	@Override
+//	public void saveDebit(Mosque theMosque) {
+//		theMosqueRepositoy.save(theMosque);
+//		
+//	}
 	@Override
 	public void deleteByid(int theId) {
 		theMosqueRepositoy.deleteById(theId);
@@ -106,18 +106,6 @@ public class MosqueServiceImpl implements MosqueService {
 	public List<Mosque> bankWithdrawn(String value) {
 		return theMosqueRepositoy.bankWithdrawn(value);
 	}
-
-//Search for user
-//	@Override
-//	public List<Mosque> listAll(String keyword) {
-//		List<Mosque> list = theMosqueRepositoy.findAll();
-//		if (keyword != null) {
-//			return theMosqueRepositoy.findAll(keyword);
-//		}
-//		return theMosqueRepositoy.findAll();
-//	}
-
-	// Search for admin
 	@Override
 	public List<Mosque> listAllForAdmin(String param) {
 		List<Mosque> list = theMosqueRepositoy.findAll();
@@ -126,7 +114,7 @@ public class MosqueServiceImpl implements MosqueService {
 			total += mosque.getCredit_amount() - mosque.getDebit_amount();
 			mosque.setTotal_balance(total);
 		}
-		list.forEach(System.out::println);
+//		list.forEach(System.out::println);
 		list.sort(Comparator.comparing(Mosque::getId).reversed());
 		if (param != null) {
 			return theMosqueRepositoy.findAll(param);

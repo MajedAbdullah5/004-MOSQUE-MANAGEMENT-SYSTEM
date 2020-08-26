@@ -2,16 +2,20 @@ package com.Alipur.MosqueManagement.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import com.Alipur.MosqueManagement.entity.Mosque;
 import com.Alipur.MosqueManagement.entity.service.MosqueService;
 
@@ -61,7 +65,7 @@ public class MosqueTrade_Controller {
 	public MosqueTrade_Controller(MosqueService theMosqueService) {
 		this.theMosqueService = theMosqueService;
 	}
-	
+
 	// Home page
 	@GetMapping("/")
 	public String getHome() {
@@ -82,17 +86,17 @@ public class MosqueTrade_Controller {
 
 	// Find all feature and search
 	@GetMapping("/combine-report")
-	public String getCombineReport(Model theModel, @Param("keyword") String keyword) {	
+	public String getCombineReport(Model theModel, @Param("keyword") String keyword) {
 		List<Mosque> theMosque = theMosqueService.listAllForAdmin(keyword);
 		theModel.addAttribute("listforuser", theMosque);
 		return "SS-list-for-users";
 	}
-	
-	//Access Denied
-		@GetMapping("/403")
-		public String accessDenied() {
+
+	// Access Denied
+	@GetMapping("/403")
+	public String accessDenied() {
 		return "V-access-denied";
-		}
+	}
 
 	// Find all feature and search for admin
 	@GetMapping("/list")
@@ -109,12 +113,13 @@ public class MosqueTrade_Controller {
 	}
 
 	// Add Credit
-	@GetMapping("/add")
+	@GetMapping("/addCredit")
 	public String addCredit(Model theModel) {
 		Mosque theMosque = new Mosque();
 		theModel.addAttribute("theMosque", theMosque);
 		return "C-add-credit";
 	}
+
 	// Add Debit
 	@GetMapping("/addDebit")
 	public String addDebit(Model theModel) {
@@ -123,12 +128,22 @@ public class MosqueTrade_Controller {
 		return "CC-add-debit";
 	}
 
-	// save Account
+	// save credit Account
 	@PostMapping("/save")
 	public String save(@ModelAttribute("saveAttribute") Mosque theMosque) {
 		theMosqueService.save(theMosque);
 		return "redirect:/mosque/list";
+
 	}
+//	// save debit Account
+//	@PostMapping("/saveDebit")
+//	public String saveDebit(@ModelAttribute("saveAttribute") @Valid  Mosque theMosque2,BindingResult theBindingResult) {
+//		if(theBindingResult.hasErrors()) {
+//			return "C-add-debit";
+//		}
+//		theMosqueService.saveDebit(theMosque2);		
+//		return "redirect:/mosque/list";
+//	}
 
 	// update Account
 	@GetMapping("/update")
@@ -253,6 +268,16 @@ public class MosqueTrade_Controller {
 	@GetMapping("/success")
 	public String successPayment() {
 		return "R-success-payment";
+	}
+	//About us
+	@GetMapping("/about")
+	public String about() {
+		return "W-about-mosque";
+	}
+	//Contact us
+	@GetMapping("/contact")
+	public String contact() {
+		return "X-contact";
 	}
 
 }
