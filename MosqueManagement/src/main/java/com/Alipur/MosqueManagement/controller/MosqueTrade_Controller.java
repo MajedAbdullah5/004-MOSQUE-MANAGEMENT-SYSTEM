@@ -117,7 +117,9 @@ public class MosqueTrade_Controller {
 	}
 	// Report form
 	@GetMapping("/combineReport")
-	public String getCombineReport() {
+	public String getReport(Model theModel, @Param("keyword") String keyword) {
+		List<Mosque> theMosque = theMosqueService.listAllForAdmin(keyword);
+		theModel.addAttribute("listforuser", theMosque);
 		return "Y-report";
 	}
 

@@ -127,6 +127,10 @@ li#donateButton.nav-item{
 	padding-left: 10px;
 	padding-right: 10px;
 }
+.adminlist h2,h6,h4{
+	text-align:center;
+	padding:5px;
+}
 /*----------------------------------------------------Caurosel Image------------------------------------------------*/
 #image1 {
 	overflow: hidden;
@@ -203,7 +207,17 @@ li#donateButton.nav-item{
 .aboutContainer{
 	margin-top:300px;
 }
-/* ------------------------------X-contact.html.html------------------- */
+/* ------------------------------X-contact.html------------------- */
 .contact{
 	margin-top:300px;
+}
+/* ------------------------------Y-report.html------------------- */
+.reportTable td{
+	text-align:center;
+}
+.signature{
+	margin-top:100px;
+}
+.signature h6{
+	border-top: 2px solid black;
 }

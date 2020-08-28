@@ -4,12 +4,14 @@
 		<div class="adminlist">
 			<div>
 				<div>
-					<h3>COMBINED REPORT OF INCOME AND EXP.</h3>
+					<b><h2>উত্তর আলীপুর কেন্দ্রীয় জামে মসজিদ।</h2></b>
+					<h6>গ্রাম-উত্তর আলীপুর, ডাকঘর- বেকের বাজার, উপজেলা-দাগনভূঞা, জেলা- ফেনী।</h6>
+					<u><h4>মাসিক আয়-ব্যয়ের হিসাব বিবরনী</h4></u>
 				</div>
 				<br>
 				<div style="overflow-x: auto;">
-					<table class="table table-bordered table-striped">
-						<thead class="thead-dark">
+					<table class="reportTable" border="1">
+						<thead>
 							<tr>
 								<th>NAME</th>
 								<th>ADDRESS</th>
@@ -20,12 +22,11 @@
 								<th>CURRENT DATE</th>
 								<th>DATE</th>
 								<th>TRADE BY</th>								
-								<th>TOTAL BALANCE</th>								
-								<th>ACTION</th>
+								<th>TOTAL BALANCE</th>							
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="tempList : ${listAll}">
+							<tr th:each="tempList : ${listforuser}">
 								<td th:text="${tempList.name}"></td>
 								<td th:text="${tempList.address}"></td>
 								<td th:text="${tempList.trade_head}"></td>
@@ -36,15 +37,23 @@
 								<td th:text="${tempList.yot}"></td>
 								<td th:text="${tempList.trade_by}"></td>
 								<td th:text="${tempList.total_balance}"></td>
-								<td><a th:href="@{/mosque/update(id=${tempList.id})}"
-									class="btn btn-info btn-sm">Update</a><a
-									th:href="@{/mosque/delete(id=${tempList.id})}"
-									onclick="if(!(confirm('Are you sure you want to update?'))) return false"
-									class="btn btn-danger btn-sm">Delete</a></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
+			</div>
+			
+			<div class="row signature">
+			<div class="col-sm-4">
+			<h6>কোষাধ্যক্ষ</h6>
+			</div>
+			<div class="col-sm-4">
+			<h6>সাধারণ সম্পাদক</h6>
+			</div>
+			<div class="col-sm-4">
+			<h6>সভাপতি(মসজিদ কমিটি)</h6>
+			</div>
+			
 			</div>
 		</div>
 	</div>
