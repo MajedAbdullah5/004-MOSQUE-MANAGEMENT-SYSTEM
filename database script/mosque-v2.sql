@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `Mosque_Management`;
-USE `Mosque_Management`;
+CREATE DATABASE  IF NOT EXISTS `mosque_management`;
+USE `mosque_management`;
 
 --
 -- Table structure for table `student`

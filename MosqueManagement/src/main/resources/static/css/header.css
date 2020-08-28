@@ -6,12 +6,12 @@
 	width: 100%;
 	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
-.navbarNav {
+/* .navbarNav {
 	padding: 10px;
-}
+} */
 .nav-item {
 	margin:5px;
-	padding: 5px;
+
 	font-size: 17px;
 }
 
@@ -82,7 +82,7 @@ li#donateButton.nav-item{
 }
 
 .contributor {
-	margin-top: 250px;
+	margin-top: 300px;
 	padding: 5px;
 	margin-bottom: 20px;
 }
@@ -130,7 +130,7 @@ li#donateButton.nav-item{
 /*----------------------------------------------------Caurosel Image------------------------------------------------*/
 #image1 {
 	overflow: hidden;
-	background: url("/images/260999.jpg");
+	background: url("https://res.cloudinary.com/nuist/image/upload/v1598590456/MosqueWallpaper/file-20200727-35-nr0cyq_kqpw07.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -140,7 +140,7 @@ li#donateButton.nav-item{
 
 #image2 {
 	overflow: hidden;
-	background: url("/images/261005.jpg") center no-repeat;
+	background: url("https://res.cloudinary.com/nuist/image/upload/v1598590458/MosqueWallpaper/261009_wjnyry.jpg") center no-repeat;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -150,7 +150,7 @@ li#donateButton.nav-item{
 
 #image3 {
 	overflow: hidden;
-	background: url("/images/261009.jpg") center no-repeat;
+	background: url("https://res.cloudinary.com/nuist/image/upload/v1598590456/MosqueWallpaper/261024_vanybn.jpg") center no-repeat;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -160,7 +160,7 @@ li#donateButton.nav-item{
 
 #image4 {
 	overflow: hidden;
-	background: url("/images/261014.jpg") center no-repeat;
+	background: url("https://res.cloudinary.com/nuist/image/upload/v1598590457/MosqueWallpaper/261005_o2sc82.jpg") center no-repeat;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -200,4 +200,10 @@ li#donateButton.nav-item{
 .about{
 	margin: 0 20 0 20;
 }
-
+.aboutContainer{
+	margin-top:300px;
+}
+/* ------------------------------X-contact.html.html------------------- */
+.contact{
+	margin-top:300px;
+}

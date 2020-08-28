@@ -41,5 +41,23 @@ public interface MosqueService {
 	public List<Mosque> bankWithdrawn(String value);
 
 	public List<Mosque> otherCollection(String value);
+	
 
+	/* ----------------------------Debit Lists----------------------*/
+	public List<Mosque> honors();
+	public List<Mosque> mobileBill();
+	public List<Mosque> travel();
+	public List<Mosque> generalWage();
+	public List<Mosque> loanPayment();
+	public List<Mosque> ElectricityBill();
+	public List<Mosque> fuel();
+	public List<Mosque> constructor();
+	public List<Mosque> paint();
+	public List<Mosque> electric();
+	public List<Mosque> meterial();
+	public List<Mosque> miscillaneous();
+	public List<Mosque> repair();
+	public List<Mosque> furniture();
+	public List<Mosque> entertainment();
+	public List<Mosque> transportation();
 }

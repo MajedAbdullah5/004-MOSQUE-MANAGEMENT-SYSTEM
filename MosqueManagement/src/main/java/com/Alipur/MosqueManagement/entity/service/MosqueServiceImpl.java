@@ -36,11 +36,6 @@ public class MosqueServiceImpl implements MosqueService {
 	public void save(Mosque theMosque) {
 		theMosqueRepositoy.save(theMosque);
 	}
-//	@Override
-//	public void saveDebit(Mosque theMosque) {
-//		theMosqueRepositoy.save(theMosque);
-//		
-//	}
 	@Override
 	public void deleteByid(int theId) {
 		theMosqueRepositoy.deleteById(theId);
@@ -120,5 +115,85 @@ public class MosqueServiceImpl implements MosqueService {
 			return theMosqueRepositoy.findAll(param);
 		}
 		return list;
+	}
+
+	@Override
+	public List<Mosque> honors() {
+		return theMosqueRepositoy.honor();
+	}
+
+	@Override
+	public List<Mosque> mobileBill() {
+		return theMosqueRepositoy.mobileBill();
+	}
+
+	@Override
+	public List<Mosque> travel() {
+		return theMosqueRepositoy.travel();
+	}
+
+	@Override
+	public List<Mosque> generalWage() {
+		return theMosqueRepositoy.generalWage();
+	}
+
+	@Override
+	public List<Mosque> loanPayment() {
+		return theMosqueRepositoy.loanPayment();
+	}
+
+	@Override
+	public List<Mosque> ElectricityBill() {
+		return theMosqueRepositoy.electricityBill();
+	}
+
+	@Override
+	public List<Mosque> fuel() {
+		return theMosqueRepositoy.fuel();
+	}
+
+	@Override
+	public List<Mosque> constructor() {
+		return theMosqueRepositoy.constructorWage();
+	}
+
+	@Override
+	public List<Mosque> paint() {
+		return theMosqueRepositoy.paint();
+	}
+
+	@Override
+	public List<Mosque> electric() {
+		return theMosqueRepositoy.electricEquipment();
+	}
+
+	@Override
+	public List<Mosque> meterial() {
+		return theMosqueRepositoy.meterials();
+	}
+
+	@Override
+	public List<Mosque> miscillaneous() {
+		return theMosqueRepositoy.miscillaneous();
+	}
+
+	@Override
+	public List<Mosque> repair() {
+		return theMosqueRepositoy.repair();
+	}
+
+	@Override
+	public List<Mosque> furniture() {
+		return theMosqueRepositoy.furniture();
+	}
+
+	@Override
+	public List<Mosque> entertainment() {
+		return theMosqueRepositoy.entertainment();
+	}
+
+	@Override
+	public List<Mosque> transportation() {
+		return theMosqueRepositoy.transportation();
 	}
 }

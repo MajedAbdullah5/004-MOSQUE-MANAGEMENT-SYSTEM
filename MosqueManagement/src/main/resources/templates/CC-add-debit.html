@@ -15,32 +15,35 @@
 					<!-- <input type="email" class="form-control" id="inputEmail4"> -->
 					<label for="inputEmail4">COLLECTION HEAD</label> <select
 						id="inputState" class="form-control" th:field="*{trade_head}">
-						<option th:value="'SELECT'" th:text="'SELECT'" selected></option>
 						<option th:value="'NONE'" th:text="'NONE'"></option>
-						<option th:value="'ORG DONATION'" th:text="'ORG DONATION'"></option>
-						<option th:value="'PERSON DONATION'" th:text="'PERSON DONATION'"></option>
-						<option th:value="'LAND SALE'" th:text="'LAND SALE'"></option>
-						<option th:value="'UNNECESSARY EQUIPMENT SALE'"
-							th:text="'UNNECESSARY EQUIPMENT SALE'"></option>
-						<option th:value="'COLLECTION JUMMAH'"
-							th:text="'COLLECTION JUMMAH'"></option>
-						<option th:value="'SPECIAL COLLECTION (FITR)'"
-							th:text="'SPECIAL COLLECTION (FITR)'"></option>
-						<option th:value="'SPECIAL COLLECTION (ADHA)'"
-							th:text="'SPECIAL COLLECTION (ADHA)'"></option>
-						<option th:value="'SPECIAL COLLECTION (JUMMAH)'"
-							th:text="'SPECIAL COLLECTION (JUMMAH)'"></option>
-						<option th:value="'TARAWIH EXTRA'" th:text="'TARAWIH EXTRA'"></option>
-						<option th:value="'BANK WITHDRAWN'" th:text="'BANK WITHDRAWN'"></option>
-						<option th:value="'SOCIAL'" th:text="'SOCIAL'"></option>
-						<option th:value="'OTHER COLLECTION'" th:text="'OTHER COLLECTION'"></option>
+						<option th:value="'HONORS'" th:text="'HONORS'"></option>
+						<option th:value="'MOBILE BILL'" th:text="'MOBILE BILL'"></option>
+						<option th:value="'TRAVEL COSTS'" th:text="'TRAVEL COSTS'"></option>
+						<option th:value="'GENERAL WAGE'"
+							th:text="'GENERAL WAGE'"></option>
+						<option th:value="'LOAN PAYMENT'"
+							th:text="'LOAN PAYMENT'"></option>
+						<option th:value="'ELECTRICITY BILL'"
+							th:text="'ELECTRICITY BILL'"></option>
+						<option th:value="'FUEL CONSUMPTION'"
+							th:text="'FUEL CONSUMPTION'"></option>
+						<option th:value="'CONSTRUCTOR WAGE'"
+							th:text="'CONSTRUCTOR WAGE'"></option>
+						<option th:value="'PAINT CONSUMPTION'" th:text="'PAINT CONSUMPTION'"></option>
+						<option th:value="'ELECTRIC EQUIPMENT'" th:text="'ELECTRIC EQUIPMENT'"></option>
+						<option th:value="'PURCHASE METERIALS'" th:text="'PURCHASE METERIALS'"></option>
+						<option th:value="'MISCILLANEOUS COSTS'" th:text="'MISCILLANEOUS COSTS'"></option>
+						<option th:value="'REPAIR & MAINTENANCE'" th:text="'REPAIR & MAINTENANCE'"></option>
+						<option th:value="'PURCHASE OF FURNITURE'" th:text="'PURCHASE OF FURNITURE'"></option>
+						<option th:value="'ENTERTAINMENT CONSUMPTION'" th:text="'ENTERTAINMENT CONSUMPTION'"></option>
+						<option th:value="'TRANSPORTATION CONSUMPTION'" th:text="'TRANSPORTATION CONSUMPTION
+'"></option>
 					</select>
 				</div>
 				<!-- --------------------------------- WAY OF PAYMENT ------------------------->
 				<div class="form-group col-md-3">
 					<label for="wayofpayment">WAY OF PAYMENT</label> <select
 						class="form-control" id="wayofpayment" th:field="*{wop}">
-						<option th:value="'SELECT'" th:text="'SELECT'" selected></option>
 						<option th:value="'NONE'" th:text="'NONE'"></option>
 						<option th:value="'CHEQUE'" th:text="'CHEQUE'"></option>
 						<option th:value="'CASH'" th:text="'CASH'"></option>
