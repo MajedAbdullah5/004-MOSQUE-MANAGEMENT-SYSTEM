@@ -36,6 +36,7 @@ public class MosqueServiceImpl implements MosqueService {
 	public void save(Mosque theMosque) {
 		theMosqueRepositoy.save(theMosque);
 	}
+
 	@Override
 	public void deleteByid(int theId) {
 		theMosqueRepositoy.deleteById(theId);
@@ -101,6 +102,7 @@ public class MosqueServiceImpl implements MosqueService {
 	public List<Mosque> bankWithdrawn(String value) {
 		return theMosqueRepositoy.bankWithdrawn(value);
 	}
+
 	@Override
 	public List<Mosque> listAllForAdmin(String param) {
 		List<Mosque> list = theMosqueRepositoy.findAll();

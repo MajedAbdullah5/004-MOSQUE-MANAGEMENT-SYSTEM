@@ -1,4 +1,7 @@
-
+body{
+	margin:0px;
+	padding:0px;
+}
 /*------------------------------------------ NavBar -----------------------------------*/
 #navbar {
 	position: fixed;
@@ -32,6 +35,9 @@
 li#donateButton.nav-item{
 	padding:6px;
 	border-bottom: 1px solid #f8f9fa!important;
+}
+a.nav-link{
+	padding:3px;
 }
 /* ------------------------- */
 /* User view page */
@@ -82,7 +88,7 @@ li#donateButton.nav-item{
 }
 
 .contributor {
-	margin-top: 300px;
+	margin-top: 170px;
 	padding: 5px;
 	margin-bottom: 20px;
 }
@@ -133,7 +139,6 @@ li#donateButton.nav-item{
 }
 /*----------------------------------------------------Caurosel Image------------------------------------------------*/
 #image1 {
-	overflow: hidden;
 	background: url("https://res.cloudinary.com/nuist/image/upload/v1598590456/MosqueWallpaper/file-20200727-35-nr0cyq_kqpw07.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
@@ -143,7 +148,6 @@ li#donateButton.nav-item{
 }
 
 #image2 {
-	overflow: hidden;
 	background: url("https://res.cloudinary.com/nuist/image/upload/v1598590458/MosqueWallpaper/261009_wjnyry.jpg") center no-repeat;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -153,7 +157,6 @@ li#donateButton.nav-item{
 }
 
 #image3 {
-	overflow: hidden;
 	background: url("https://res.cloudinary.com/nuist/image/upload/v1598590456/MosqueWallpaper/261024_vanybn.jpg") center no-repeat;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -163,7 +166,6 @@ li#donateButton.nav-item{
 }
 
 #image4 {
-	overflow: hidden;
 	background: url("https://res.cloudinary.com/nuist/image/upload/v1598590457/MosqueWallpaper/261005_o2sc82.jpg") center no-repeat;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -205,14 +207,14 @@ li#donateButton.nav-item{
 	margin: 0 20 0 20;
 }
 .aboutContainer{
-	margin-top:300px;
+	margin-top:170px;
 }
 /* ------------------------------X-contact.html------------------- */
 .contact{
-	margin-top:300px;
+	margin-top:200px;
 }
 /* ------------------------------Y-report.html------------------- */
-.reportTable td{
+.reportTable td,th{
 	text-align:center;
 }
 .signature{
@@ -220,4 +222,13 @@ li#donateButton.nav-item{
 }
 .signature h6{
 	border-top: 2px solid black;
+}
+/* ------------------------------Z-gallery.html------------------- */
+.galleryContainer{
+margin-top:170px;
+}
+/* ------------------------------T-contributor.html------------------- */
+
+.cardImage{
+	width:70%;
 }

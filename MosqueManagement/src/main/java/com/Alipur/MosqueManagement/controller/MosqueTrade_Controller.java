@@ -174,16 +174,6 @@ public class MosqueTrade_Controller {
 		return "redirect:/mosque/list";
 
 	}
-//	// save debit Account
-//	@PostMapping("/saveDebit")
-//	public String saveDebit(@ModelAttribute("saveAttribute") @Valid  Mosque theMosque2,BindingResult theBindingResult) {
-//		if(theBindingResult.hasErrors()) {
-//			return "C-add-debit";
-//		}
-//		theMosqueService.saveDebit(theMosque2);		
-//		return "redirect:/mosque/list";
-//	}
-
 	// update Account
 	@GetMapping("/update")
 	public String getUpdate(@RequestParam("id") int theId, Model theModel) {
@@ -428,6 +418,10 @@ public class MosqueTrade_Controller {
 		List<Mosque> theMosque = theMosqueService.transportation();
 		theModel.addAttribute("transportation", theMosque);
 		return "DO-transportation";
+	}
+	@GetMapping("/gallery")
+	public String gallery() {
+		return "Z-gallery";
 	}
 
 }
