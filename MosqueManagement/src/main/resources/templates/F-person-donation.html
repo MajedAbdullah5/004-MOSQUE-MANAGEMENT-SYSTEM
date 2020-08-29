@@ -15,7 +15,6 @@
 					<th>DEBIT AMOUNT</th>
 					<th>WAY OF PAYMENT</th>
 					<th>DATE</th>
-					<th>YEAR OF TRADE</th>
 					<th>TRADE BY</th>
 					<th>ACTION</th>
 				</tr>
@@ -28,7 +27,6 @@
 					<td th:text="${tempList.credit_amount}"></td>
 					<td th:text="${tempList.debit_amount}"></td>
 					<td th:text="${tempList.wop}"></td>
-					<td th:text="${tempList.date}"></td>
 					<td th:text="${tempList.yot}"></td>
 					<td th:text="${tempList.trade_by}"></td>
 					<td><a th:href="@{/mosque/update(id=${tempList.id})}"

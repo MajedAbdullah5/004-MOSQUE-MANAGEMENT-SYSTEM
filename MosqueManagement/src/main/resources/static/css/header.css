@@ -14,7 +14,6 @@ body{
 } */
 .nav-item {
 	margin:5px;
-
 	font-size: 17px;
 }
 
@@ -108,8 +107,9 @@ a.nav-link{
 }
 /* -------------------------------------------------- ADD USER FORM ---------------------------------------------*/
 .adduserform {
+	min-width:50%;
 	margin-top: 200px;
-	margin-left: 200px;
+	margin-left: 100px;
 	margin-right: 200px;
 }
 /*----------------------------------------------------ADMIN PANEL------------------------------------------------*/
@@ -214,8 +214,12 @@ a.nav-link{
 	margin-top:200px;
 }
 /* ------------------------------Y-report.html------------------- */
-.reportTable td,th{
+.reportTable tr,td,th{
 	text-align:center;
+	padding:5px;
+}
+.reportTable{
+margin:auto;
 }
 .signature{
 	margin-top:100px;
