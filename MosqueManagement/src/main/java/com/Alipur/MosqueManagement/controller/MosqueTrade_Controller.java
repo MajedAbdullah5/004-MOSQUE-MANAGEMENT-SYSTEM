@@ -2,9 +2,10 @@ package com.Alipur.MosqueManagement.controller;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.embedded.tomcat.TomcatContextCustomizer;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +21,6 @@ import com.Alipur.MosqueManagement.entity.service.MosqueService;
 @Controller
 @RequestMapping("/mosque")
 public class MosqueTrade_Controller {
-
 	@Value("${ORG.DONATION}")
 	private String org_Donation;
 
@@ -56,20 +56,20 @@ public class MosqueTrade_Controller {
 
 	@Value("${OTHER.COLLECTION}")
 	private String other_Collection;
-	
-	//---------------------------------debit
+
+	// ---------------------------------debit
 	@Value("${HONORS}")
 	private String HONORS;
 	@Value("${MOBILE.BILL}")
-	private String MOBILE_BILL ;
+	private String MOBILE_BILL;
 	@Value("${TRAVEL.COSTS}")
 	private String TRAVEL_COSTS;
 	@Value("${GENERAL.WAGE}")
 	private String GENERAL_WAGE;
 	@Value("${LOAN.PAYMENT}")
-	private String LOAN_PAYMENT ;
+	private String LOAN_PAYMENT;
 	@Value("${ELECTRICITY.BILL}")
-	private String ELECTRICITY_BILL ;
+	private String ELECTRICITY_BILL;
 	@Value("${FUEL.CONSUMPTION}")
 	private String FUEL_CONSUMPTION;
 	@Value("${CONSTRUCTOR.WAGE}")
@@ -115,6 +115,7 @@ public class MosqueTrade_Controller {
 	public String getLoginForm() {
 		return "U-custom-login-form";
 	}
+
 	// Report form
 	@GetMapping("/combineReport")
 	public String getReport(Model theModel, @Param("keyword") String keyword) {
@@ -174,6 +175,7 @@ public class MosqueTrade_Controller {
 		return "redirect:/mosque/list";
 
 	}
+
 	// update Account
 	@GetMapping("/update")
 	public String getUpdate(@RequestParam("id") int theId, Model theModel) {
@@ -298,19 +300,21 @@ public class MosqueTrade_Controller {
 	public String successPayment() {
 		return "R-success-payment";
 	}
-	//About us
+
+	// About us
 	@GetMapping("/about")
 	public String about() {
 		return "W-about-mosque";
 	}
-	//Contact us
+
+	// Contact us
 	@GetMapping("/contact")
 	public String contact() {
 		return "X-contact";
 	}
-	
+
 //	----------------------------Debit lists
-	
+
 	// honor
 	@GetMapping("/honor")
 	public String honor(Model theModel) {
@@ -318,7 +322,7 @@ public class MosqueTrade_Controller {
 		theModel.addAttribute("honor", theMosque);
 		return "DA-honor";
 	}
-	
+
 	// honor
 	@GetMapping("/mobileBill")
 	public String mobileBill(Model theModel) {
@@ -326,7 +330,7 @@ public class MosqueTrade_Controller {
 		theModel.addAttribute("mobileBill", theMosque);
 		return "DB-mobileBill";
 	}
-	
+
 	// honor
 	@GetMapping("/travelCost")
 	public String travelCost(Model theModel) {
@@ -334,7 +338,7 @@ public class MosqueTrade_Controller {
 		theModel.addAttribute("travelCost", theMosque);
 		return "DC-travelCost";
 	}
-	
+
 	// honor
 	@GetMapping("/generalWage")
 	public String generalWage(Model theModel) {
@@ -342,7 +346,7 @@ public class MosqueTrade_Controller {
 		theModel.addAttribute("generalWage", theMosque);
 		return "DD-generalWage";
 	}
-	
+
 	// honor
 	@GetMapping("/loanPayment")
 	public String loanPayment(Model theModel) {
@@ -350,14 +354,14 @@ public class MosqueTrade_Controller {
 		theModel.addAttribute("loanPayment", theMosque);
 		return "DE-loanPayment";
 	}
-	
+
 	@GetMapping("/electricityBill")
 	public String electricityBill(Model theModel) {
 		List<Mosque> theMosque = theMosqueService.ElectricityBill();
 		theModel.addAttribute("electricityBill", theMosque);
 		return "DF-electricityBill";
 	}
-	
+
 	// honor
 	@GetMapping("/fuelConsumption")
 	public String fuelConsumption(Model theModel) {
@@ -365,60 +369,70 @@ public class MosqueTrade_Controller {
 		theModel.addAttribute("fuelConsumption", theMosque);
 		return "DF-fuelConsumption";
 	}
+
 	@GetMapping("/constructorWage")
 	public String constructorWage(Model theModel) {
 		List<Mosque> theMosque = theMosqueService.constructor();
 		theModel.addAttribute("constructorWage", theMosque);
 		return "DG-constructorWage";
 	}
+
 	@GetMapping("/paintConsumption")
 	public String paintConsumption(Model theModel) {
 		List<Mosque> theMosque = theMosqueService.paint();
 		theModel.addAttribute("paintConsumption", theMosque);
 		return "DH-paintConsumption";
 	}
+
 	@GetMapping("/electricEquipment")
 	public String electricEquipment(Model theModel) {
 		List<Mosque> theMosque = theMosqueService.electric();
 		theModel.addAttribute("electricEquipment", theMosque);
 		return "DI-electricEquipment";
 	}
+
 	@GetMapping("/purchaseMeterials")
 	public String purchaseMeterials(Model theModel) {
 		List<Mosque> theMosque = theMosqueService.meterial();
 		theModel.addAttribute("purchaseMeterials", theMosque);
 		return "DJ-purchaseMeterials";
 	}
+
 	@GetMapping("/miscillaneousCosts")
 	public String miscillaneousCosts(Model theModel) {
 		List<Mosque> theMosque = theMosqueService.miscillaneous();
 		theModel.addAttribute("miscillaneousCosts", theMosque);
 		return "DK-miscillaneousCosts";
 	}
+
 	@GetMapping("/repair")
 	public String repair(Model theModel) {
 		List<Mosque> theMosque = theMosqueService.repair();
 		theModel.addAttribute("repair", theMosque);
 		return "DL-repair";
 	}
+
 	@GetMapping("/furniture")
 	public String furniture(Model theModel) {
 		List<Mosque> theMosque = theMosqueService.furniture();
 		theModel.addAttribute("furniture", theMosque);
 		return "DM-furniture";
 	}
+
 	@GetMapping("/entertainmentCons")
 	public String entertainmentCons(Model theModel) {
 		List<Mosque> theMosque = theMosqueService.entertainment();
 		theModel.addAttribute("entertainmentCons", theMosque);
 		return "DN-entertainmentCons";
 	}
+
 	@GetMapping("/transportation")
 	public String transportation(Model theModel) {
 		List<Mosque> theMosque = theMosqueService.transportation();
 		theModel.addAttribute("transportation", theMosque);
 		return "DO-transportation";
 	}
+
 	@GetMapping("/gallery")
 	public String gallery() {
 		return "Z-gallery";

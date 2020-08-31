@@ -6,16 +6,16 @@
 	<div class="adduserform">
 		<br>
 		<h3>CREDIT HEAD</h3>
-
 		<hr>
 		<br>
-		<form action="#" th:action="@{/mosque/save}"
-			th:object="${theMosque}" method="POST">
+		<form action="#" th:action="@{/mosque/save}" th:object="${theMosque}"
+			method="POST">
 			<div class="form-row">
 				<div class="form-group col-md-9">
 					<!-- <input type="email" class="form-control" id="inputEmail4"> -->
 					<label for="inputState">COLLECTION HEAD</label> <select
-						id="inputState" class="form-control" th:field="*{trade_head}" required="required">
+						id="inputState" class="form-control" th:field="*{trade_head}"
+						required="required">
 						<option th:value="'NONE'" th:text="'NONE'"></option>
 						<option th:value="'ORG DONATION'" th:text="'ORG DONATION'"></option>
 						<option th:value="'PERSON DONATION'" th:text="'PERSON DONATION'"></option>
@@ -39,7 +39,8 @@
 				<!-- --------------------------------- WAY OF PAYMENT ------------------------->
 				<div class="form-group col-md-3">
 					<label for="wayofpayment">WAY OF PAYMENT</label> <select
-						class="form-control" id="wayofpayment" th:field="*{wop}" required="required">
+						class="form-control" id="wayofpayment" th:field="*{wop}"
+						required="required">
 						<option th:value="'NONE'" th:text="'NONE'"></option>
 						<option th:value="'CHEQUE'" th:text="'CHEQUE'"></option>
 						<option th:value="'CASH'" th:text="'CASH'"></option>
@@ -49,17 +50,13 @@
 				<div class="form-group col-md-12">
 					<label for="name">NAME</label> <input id="name"
 						class="form-control" type="text" th:field="*{name}"
-						placeholder="Name"  required="required"/>
-					<!--  <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</p>
-						 -->
+						placeholder="Name" required="required" />
 				</div>
-
 				<!-- --------------------------------- AMOUNT ---------------------------->
-
 				<div class="form-group col-md-6">
 					<label for="credit_amount">AMOUNT</label> <input ID="credit_amount"
 						class="form-control" type="text" th:field="*{credit_amount}"
-						placeholder="Amount" required="required"/>
+						placeholder="Amount" required="required" />
 				</div>
 				<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name
 					Error</p>
@@ -73,13 +70,13 @@
 				<div class="form-group col-md-12">
 					<label for="address">ADDRESS</label> <input id="address"
 						class="form-control" type="text" th:field="*{address}"
-						placeholder="Address" required="required"/>
+						placeholder="Address" required="required" />
 				</div>
 				<!-- --------------------------------- TRADE BY --------------------------->
 				<div class="form-group col-md-12">
 					<label for="trade_by">TRADE BY</label> <input id="trade_by"
 						class="form-control" type="text" th:field="*{trade_by}"
-						placeholder="Trade By" required="required"/>
+						placeholder="Trade By" required="required" />
 				</div>
 				<!-- ENDING DIV -->
 			</div>

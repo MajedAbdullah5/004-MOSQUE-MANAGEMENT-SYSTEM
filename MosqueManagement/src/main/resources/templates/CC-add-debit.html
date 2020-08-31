@@ -19,24 +19,27 @@
 						<option th:value="'HONORS'" th:text="'HONORS'"></option>
 						<option th:value="'MOBILE BILL'" th:text="'MOBILE BILL'"></option>
 						<option th:value="'TRAVEL COSTS'" th:text="'TRAVEL COSTS'"></option>
-						<option th:value="'GENERAL WAGE'"
-							th:text="'GENERAL WAGE'"></option>
-						<option th:value="'LOAN PAYMENT'"
-							th:text="'LOAN PAYMENT'"></option>
-						<option th:value="'ELECTRICITY BILL'"
-							th:text="'ELECTRICITY BILL'"></option>
-						<option th:value="'FUEL CONSUMPTION'"
-							th:text="'FUEL CONSUMPTION'"></option>
-						<option th:value="'CONSTRUCTOR WAGE'"
-							th:text="'CONSTRUCTOR WAGE'"></option>
-						<option th:value="'PAINT CONSUMPTION'" th:text="'PAINT CONSUMPTION'"></option>
-						<option th:value="'ELECTRIC EQUIPMENT'" th:text="'ELECTRIC EQUIPMENT'"></option>
-						<option th:value="'PURCHASE METERIALS'" th:text="'PURCHASE METERIALS'"></option>
-						<option th:value="'MISCILLANEOUS COSTS'" th:text="'MISCILLANEOUS COSTS'"></option>
-						<option th:value="'REPAIR & MAINTENANCE'" th:text="'REPAIR & MAINTENANCE'"></option>
-						<option th:value="'PURCHASE OF FURNITURE'" th:text="'PURCHASE OF FURNITURE'"></option>
-						<option th:value="'ENTERTAINMENT CONSUMPTION'" th:text="'ENTERTAINMENT CONSUMPTION'"></option>
-						<option th:value="'TRANSPORTATION CONSUMPTION'" th:text="'TRANSPORTATION CONSUMPTION
+						<option th:value="'GENERAL WAGE'" th:text="'GENERAL WAGE'"></option>
+						<option th:value="'LOAN PAYMENT'" th:text="'LOAN PAYMENT'"></option>
+						<option th:value="'ELECTRICITY BILL'" th:text="'ELECTRICITY BILL'"></option>
+						<option th:value="'FUEL CONSUMPTION'" th:text="'FUEL CONSUMPTION'"></option>
+						<option th:value="'CONSTRUCTOR WAGE'" th:text="'CONSTRUCTOR WAGE'"></option>
+						<option th:value="'PAINT CONSUMPTION'"
+							th:text="'PAINT CONSUMPTION'"></option>
+						<option th:value="'ELECTRIC EQUIPMENT'"
+							th:text="'ELECTRIC EQUIPMENT'"></option>
+						<option th:value="'PURCHASE METERIALS'"
+							th:text="'PURCHASE METERIALS'"></option>
+						<option th:value="'MISCILLANEOUS COSTS'"
+							th:text="'MISCILLANEOUS COSTS'"></option>
+						<option th:value="'REPAIR & MAINTENANCE'"
+							th:text="'REPAIR & MAINTENANCE'"></option>
+						<option th:value="'PURCHASE OF FURNITURE'"
+							th:text="'PURCHASE OF FURNITURE'"></option>
+						<option th:value="'ENTERTAINMENT CONSUMPTION'"
+							th:text="'ENTERTAINMENT CONSUMPTION'"></option>
+						<option th:value="'TRANSPORTATION CONSUMPTION'"
+							th:text="'TRANSPORTATION CONSUMPTION
 '"></option>
 					</select>
 				</div>
@@ -60,13 +63,13 @@
 				<div class="form-group col-md-6">
 					<label for="debit_amount">AMOUNT</label> <input ID="debit_amount"
 						class="form-control" type="text" th:field="*{debit_amount}"
-						placeholder="Amount" required="required"/>
+						placeholder="Amount" required="required" />
 				</div>
 				<!-- --------------------------------- YEAR OF TRADE --------------------->
 				<div class="form-group col-md-6">
 					<label for="date">DATE</label> <input id="date"
 						class="form-control" type="text" th:field="*{yot}"
-						placeholder="DD/MM/YYYY" required="required"/>
+						placeholder="DD/MM/YYYY" required="required" />
 				</div>
 				<!-- --------------------------------- ADDRESS --------------------------->
 				<div class="form-group col-md-12">
@@ -80,15 +83,15 @@
 						class="form-control" type="text" th:field="*{trade_by}"
 						placeholder="Trade By" required="required" />
 				</div>
-				
+
 				<!-- ENDING DIV -->
 			</div>
 			<!-- ENDING DIV -->
-	<!-- <button type="submit" class="btn btn-primary">Sign in</button> -->
-	<input type="submit" value="Save"
-		onclick="if(!(confirm('Are you sure?'))) return false"
-		class="btn btn-info btn-lg	" />
-	</form>
+			<!-- <button type="submit" class="btn btn-primary">Sign in</button> -->
+			<input type="submit" value="Save"
+				onclick="if(!(confirm('Are you sure?'))) return false"
+				class="btn btn-info btn-lg	" />
+		</form>
 	</div>
 </body>
 <footer>
